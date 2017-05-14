@@ -4,12 +4,12 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://showcc.github.io/"/>
   <updated>2017-05-09T07:11:40.694Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://showcc.github.io/</id>
   
   <author>
-    <name>王立战的博客</name>
+    <name>王立战</name>
     
   </author>
   
@@ -17,8 +17,8 @@
   
   <entry>
     <title>生活</title>
-    <link href="http://yoursite.com/2017/05/10/Life%20emotion/"/>
-    <id>http://yoursite.com/2017/05/10/Life emotion/</id>
+    <link href="http://showcc.github.io/2017/05/10/Life%20emotion/"/>
+    <id>http://showcc.github.io/2017/05/10/Life emotion/</id>
     <published>2017-05-10T03:03:04.176Z</published>
     <updated>2017-05-09T07:11:40.694Z</updated>
     
@@ -76,11 +76,11 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://showcc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="雨" scheme="http://yoursite.com/tags/%E9%9B%A8/"/>
+      <category term="雨" scheme="http://showcc.github.io/tags/%E9%9B%A8/"/>
     
-      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://showcc.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
