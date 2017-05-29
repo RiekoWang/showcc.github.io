@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showcc.github.io/"/>
-  <updated>2017-05-28T09:36:06.347Z</updated>
+  <updated>2017-05-29T04:08:54.344Z</updated>
   <id>http://showcc.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/"/>
     <id>http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/</id>
     <published>2017-05-28T01:24:28.409Z</published>
-    <updated>2017-05-28T09:36:06.347Z</updated>
+    <updated>2017-05-29T04:08:54.344Z</updated>
     
     <content type="html"><![CDATA[<p>为什么要用Github Page搭建博客，借用<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰</a>的话说，喜欢写Blog的人，会经历三个阶段:</p>
 <ul>
@@ -90,7 +90,7 @@
 <p><img src="https://show8.github.io/blogimage/hexo6.png" alt="添加来必力评论图3"></p>
 <p>打开spfk主题配置文件<code>hexo\themes\spfk</code>下的<code>_config.yml</code>添加<code>livere_uid:xxxxxx</code>。</p>
 <p><img src="https://show8.github.io/blogimage/hexo9.png" alt="添加来必力评论图4"></p>
-<p>其中的值为来比力获取代码中的<code>data-uid</code>值。</p>
+<p>其中的值为来必力获取代码中的<code>data-uid</code>值。</p>
 <p><img src="https://show8.github.io/blogimage/hexo9.png" alt="添加来必力评论图5"></p>
 <p>最后输入以下指令部署到GitHub上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
 <p>OK，来必力评论添加完成，输入网址试试！</p>
