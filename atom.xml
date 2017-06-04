@@ -5,11 +5,11 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showcc.github.io/"/>
-  <updated>2017-05-29T04:08:54.344Z</updated>
+  <updated>2017-06-04T07:14:51.287Z</updated>
   <id>http://showcc.github.io/</id>
   
   <author>
-    <name>王战</name>
+    <name>王立战</name>
     
   </author>
   
@@ -20,7 +20,7 @@
     <link href="http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/"/>
     <id>http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/</id>
     <published>2017-05-28T01:24:28.409Z</published>
-    <updated>2017-05-29T04:08:54.344Z</updated>
+    <updated>2017-06-04T07:14:51.287Z</updated>
     
     <content type="html"><![CDATA[<p>为什么要用Github Page搭建博客，借用<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰</a>的话说，喜欢写Blog的人，会经历三个阶段:</p>
 <ul>
@@ -75,7 +75,7 @@
 <p>当然你也可以打开文件直接复制其内容（下图中文件就是刚刚拷贝的Key）：</p>
 <p><img src="https://show8.github.io/blogimage/hexo5.png" alt="配置文件图5"></p>
 <p>然后，在GitHub右上方点击头像，选择<code>Settings</code>，在右边的<code>Personal settings</code>侧边栏选择<code>SSH and GPG Keys</code>。接着选择SSH keys右边的<code>New SSH key</code>,其中Title随便写，然后粘贴key，点击”Add key”按钮。最后，测试链接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>这时候可能会看到有警告，没事，输入“yes”就好。</p>
+<p>这时候可能会看到有警告，没事，输入“yes”就好。<br>为了能够使Hexo部署到GitHub上，需要安装一个插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>最后一步，快要成功了，输入以下指令部署到GitHub上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
 <p>OK，我们的博客就已经完全搭建起来了，在浏览器输入（当然，是你的用户名）：</p>
 <p><a href="https://showcc.github.io/">https://showcc.github.io/</a></p>
