@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showcc.github.io/"/>
-  <updated>2017-06-04T07:14:51.287Z</updated>
+  <updated>2017-06-07T04:43:57.710Z</updated>
   <id>http://showcc.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/"/>
     <id>http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/</id>
     <published>2017-05-28T01:24:28.409Z</published>
-    <updated>2017-06-04T07:14:51.287Z</updated>
+    <updated>2017-06-07T04:43:57.710Z</updated>
     
     <content type="html"><![CDATA[<p>为什么要用Github Page搭建博客，借用<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰</a>的话说，喜欢写Blog的人，会经历三个阶段:</p>
 <ul>
@@ -101,7 +101,7 @@
 <li>hexo s == hexo server</li>
 <li>hexo n == hexo new</li>
 </ul>
-<h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><p>非常感谢您花时间于阅读我的博客，希望对您有所帮助。</p>
+<h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><p>非常感谢您花时间阅读我的博客，希望对您有所帮助。</p>
 ]]></content>
     
     <summary type="html">
