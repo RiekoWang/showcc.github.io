@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://show8.github.io/blogimage/hexo6.png">
 <meta property="og:image" content="https://show8.github.io/blogimage/hexo9.png">
 <meta property="og:image" content="https://show8.github.io/blogimage/hexo9.png">
-<meta property="og:updated_time" content="2017-06-07T04:43:57.710Z">
+<meta property="og:updated_time" content="2017-06-08T13:04:33.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统">
 <meta name="twitter:description" content="为什么要用Github Page搭建博客，借用阮一峰的话说，喜欢写Blog的人，会经历三个阶段:  第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。 第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。 第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。  哈哈 我目前就处于第一阶段，捣鼓着玩的，整个搭建过程都是照着网上做的">
@@ -143,7 +143,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
+                        <a href="/tags/Git/" style="font-size: 20px;">Git</a> <a href="/tags/GitHub/" style="font-size: 20px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
                     </div>
                 </section>
                 
@@ -285,7 +285,7 @@
 <p><img src="https://show8.github.io/blogimage/hexo3.png" alt="配置文件图2"></p>
 <p>修改文件里面的deploy。其中的repository就改成你刚刚复制的地址。保存这个文件。</p>
 <p><img src="https://show8.github.io/blogimage/hexo1.png" alt="配置文件图3"></p>
-<h3 id="与github建立联系-设置SSH-keys"><a href="#与github建立联系-设置SSH-keys" class="headerlink" title="与github建立联系-设置SSH keys"></a>与github建立联系-设置SSH keys</h3><p>为了能够在本地使用git管理github上的项目，需要进行一些配置，我用用的是SSH的方法。在Git Bash输入以下指令（任意位置点击鼠标右键），检查是否已经存在了SSH keys。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div></pre></td></tr></table></figure></p>
+<h3 id="与github建立联系-设置SSH-keys"><a href="#与github建立联系-设置SSH-keys" class="headerlink" title="与github建立联系-设置SSH keys"></a>与github建立联系-设置SSH keys</h3><p>为了能够在本地使用git管理github上的项目，需要进行一些配置，我用的是SSH的方法。在Git Bash输入以下指令（任意位置点击鼠标右键），检查是否已经存在了SSH keys。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div></pre></td></tr></table></figure></p>
 <p>如果不存在没有关系，如果存在的话，直接删除.ssh文件夹里面所有文件</p>
 <p><img src="https://show8.github.io/blogimage/hexo4.png" alt="配置文件图4"></p>
 <p>输入以下指令（邮箱就是你注册Github时候的邮箱）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;show_wlz@163.com&quot;</div></pre></td></tr></table></figure></p>
@@ -298,7 +298,8 @@
 <p>当然你也可以打开文件直接复制其内容（下图中文件就是刚刚拷贝的Key）：</p>
 <p><img src="https://show8.github.io/blogimage/hexo5.png" alt="配置文件图5"></p>
 <p>然后，在GitHub右上方点击头像，选择<code>Settings</code>，在右边的<code>Personal settings</code>侧边栏选择<code>SSH and GPG Keys</code>。接着选择SSH keys右边的<code>New SSH key</code>,其中Title随便写，然后粘贴key，点击”Add key”按钮。最后，测试链接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>这时候可能会看到有警告，没事，输入“yes”就好。<br>为了能够使Hexo部署到GitHub上，需要安装一个插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>这时候可能会看到有警告，没事，输入“yes”就好。</p>
+<p>为了能够使Hexo部署到GitHub上，需要安装一个插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>最后一步，快要成功了，输入以下指令部署到GitHub上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
 <p>OK，我们的博客就已经完全搭建起来了，在浏览器输入（当然，是你的用户名）：</p>
 <p><a href="https://showcc.github.io/">https://showcc.github.io/</a></p>
@@ -382,7 +383,7 @@
         <p><span>本文标题:</span><a href="/2017/05/28/Hexo-spfk-LiveRe/">Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 王立战 的个人博客">王立战</a></p>
         <p><span>发布时间:</span>2017年05月28日 - 09时24分</p>
-        <p><span>最后更新:</span>2017年06月07日 - 12时43分</p>
+        <p><span>最后更新:</span>2017年06月08日 - 21时04分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/05/28/Hexo-spfk-LiveRe/" title="Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统">http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/</a>
             <span class="copy-path" data-clipboard-text="原文: http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/　　作者: 王立战" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -397,6 +398,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2017/06/08/Change the computer update the hexo blog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          使用hexo，换了电脑怎么更新博客？
+        
+      </div>
+    </a>
   
   
     <a href="/2017/05/14/Mother's Day/" id="article-nav-older" class="article-nav-link-wrap">
@@ -475,7 +485,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2017/06/08/Change the computer update the hexo blog/" title="上一篇: 使用hexo，换了电脑怎么更新博客？">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
@@ -484,7 +496,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Hexo-spfk-LiveRe/">Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/Mother's Day/">燕诗示刘叟</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/10/Life emotion/">生活</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/Change the computer update the hexo blog/">使用hexo，换了电脑怎么更新博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Hexo-spfk-LiveRe/">Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/Mother's Day/">燕诗示刘叟</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/10/Life emotion/">生活</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");

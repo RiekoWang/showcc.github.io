@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showcc.github.io/"/>
-  <updated>2017-06-07T04:43:57.710Z</updated>
+  <updated>2017-06-08T13:36:04.525Z</updated>
   <id>http://showcc.github.io/</id>
   
   <author>
@@ -16,11 +16,83 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用hexo，换了电脑怎么更新博客？</title>
+    <link href="http://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/"/>
+    <id>http://showcc.github.io/2017/06/08/Change the computer update the hexo blog/</id>
+    <published>2017-06-08T12:30:14.850Z</published>
+    <updated>2017-06-08T13:36:04.525Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于我的博客是在公司电脑上搭建的，一旦离开公司电脑在自己的电脑上更新博客，就要重新配置，到底该怎么配置呢？于是我在网上搜了一番，写下这篇博客，总结一下。</p>
+<h3 id="安装-Git，安装Node-js"><a href="#安装-Git，安装Node-js" class="headerlink" title="安装 Git，安装Node.js"></a>安装 Git，安装Node.js</h3><p>首先肯定要先安装Git、Node.js,下面是下载的地址。</p>
+<ol>
+<li><a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git</a></li>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a><a id="more"></a>
+</li>
+</ol>
+<h3 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h3><p>安装完Git要设置用户名称和邮件地址。这样做很重要，因为每一个Git的提交都会使用这些信息，并且它会写入你的每一次提交中，不可更改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name &quot;username&quot;</div><div class="line">$ git config --global user.email &quot;username@example.com&quot;</div></pre></td></tr></table></figure></p>
+<h3 id="与github建立联系-设置SSH-keys"><a href="#与github建立联系-设置SSH-keys" class="headerlink" title="与github建立联系-设置SSH keys"></a>与github建立联系-设置SSH keys</h3><p>输入以下指令（邮箱就是你注册Github时候的邮箱）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;show_wlz@163.com&quot;</div></pre></td></tr></table></figure></p>
+<p>之后一路回车即可。</p>
+<p>完成后，会在用户主目录下生成.ssh目录，里面有<code>id_rsa</code>和<code>id_rsa.pub</code>两个文件，这两个就是SSH key密钥对，<code>id_rsa</code>是私钥，<code>id_rsa.pub</code>是公钥。打开文件中<code>id_rsa.pub</code>直接复制其内容：</p>
+<p><img src="https://show8.github.io/blogimage/hexo5.png" alt="图1"></p>
+<p>接着，在GitHub右上方点击头像，选择<code>Settings</code>，在右边的<code>Personal settings</code>侧边栏选择<code>SSH and GPG Keys</code>。接着选择SSH keys右边的<code>New SSH key</code>,其中Title随便写，然后粘贴key，点击”Add key”按钮。最后，测试链接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p>这时候可能会看到有警告，没事，输入“yes”就好</p>
+<h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><p>在电脑桌面任意位置点击鼠标右键，选择Git Base。输入以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure></p>
+<p>命令中-g是指全局安装hexo。</p>
+<h3 id="文件夹拷贝"><a href="#文件夹拷贝" class="headerlink" title="文件夹拷贝"></a>文件夹拷贝</h3><p>安装好后，下面就将原来的文件拷贝到新电脑中，但是要注意哪些文件是必须的，哪些文件是可以删除的。</p>
+<ol>
+<li>讨论下哪些文件是必须拷贝的：首先是之前自己修改的文件，像站点配置<code>_config.yml</code>，<code>theme文件夹里面的主题</code>，以及<code>source里面自己写的博客文件</code>，这些肯定要拷贝的。除此之外，还有三个文件需要有，就是<code>scaffolds文件夹</code>（文章的模板）、<code>package.json</code>（说明使用哪些包）和<code>.gitignore</code>（限定在提交的时候哪些文件可以忽略）。其实，这三个文件不是我们修改的，所以即使丢失了，也没有关系，我们可以建立一个新的文件夹，然后在里面执行hexo init，就会生成这三个文件，我们只需要将它们拷贝过来使用即可。<br>总结:<code>_config.yml</code>，<code>theme/</code>，<code>source/</code>，<code>scaffolds/</code>，<code>package.json</code>，<code>.gitignore</code>，是需要拷贝的。</li>
+<li>再讨论下哪些文件是不必拷贝的，或者说可以删除的：首先是<code>.git文件</code>，无论是在站点根目录下，还是主题目录下的.git文件，都可以删掉。然后是文件夹<code>node_modules</code>（在用npm install会重新生成），<code>public</code>（这个在用hexo g时会重新生成），<code>.deploy_git文件夹</code>（在使用hexo d时也会重新生成），<code>db.json文件</code>。其实上面这些文件也就是是.gitignore文件里面记载的可以忽略的内容。<br>总结：<code>.git/</code>，<code>node_modules/</code>，<code>public/</code>，<code>.deploy_git/</code>，<code>db.json文件</code>需要删除。</li>
+</ol>
+<h3 id="模块安装"><a href="#模块安装" class="headerlink" title="模块安装"></a>模块安装</h3><p>在新拷贝的文件夹里，右键选择<code>git bash</code>，使用 <code>npm install</code> 命令，进行模块安装。<br>这里不要使用hexo init初始化，因为有的文件我们已经拷贝生成过来了，所以不必用hexo init去整体初始化，如果不慎在此时用了hexo      init，则站点的配置文件_config.yml里面内容会被清空使用默认值，所以这一步一定要慎重，不要用hexo init。</p>
+<h3 id="安装一些必要组件"><a href="#安装一些必要组件" class="headerlink" title="安装一些必要组件"></a>安装一些必要组件</h3><p>如果在node_modules里面有的，就不要重复安装了：</p>
+<ol>
+<li><p>为了使用hexo d来部署到git上，需要安装:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>为了建立RSS订阅，需要安装:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
+</li>
+<li><p>为了建立站点地图，需要安装:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>最后输入以下指令部署到GitHub上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<p>如果没有出错，恭喜你转移成功！！</p>
+<h3 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h3><p>hexo支持更加简单的命令格式了，比如：</p>
+<ul>
+<li>hexo g == hexo generate</li>
+<li>hexo d == hexo deploy</li>
+<li>hexo s == hexo server</li>
+<li>hexo n == hexo new</li>
+</ul>
+<h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><p>非常感谢您花时间阅读我的博客，希望对您有所帮助。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;由于我的博客是在公司电脑上搭建的，一旦离开公司电脑在自己的电脑上更新博客，就要重新配置，到底该怎么配置呢？于是我在网上搜了一番，写下这篇博客，总结一下。&lt;/p&gt;
+&lt;h3 id=&quot;安装-Git，安装Node-js&quot;&gt;&lt;a href=&quot;#安装-Git，安装Node-js&quot; class=&quot;headerlink&quot; title=&quot;安装 Git，安装Node.js&quot;&gt;&lt;/a&gt;安装 Git，安装Node.js&lt;/h3&gt;&lt;p&gt;首先肯定要先安装Git、Node.js,下面是下载的地址。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://git-for-windows.github.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nodejs.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Node.js&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://showcc.github.io/tags/Git/"/>
+    
+      <category term="GitHub" scheme="http://showcc.github.io/tags/GitHub/"/>
+    
+      <category term="Hexo" scheme="http://showcc.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</title>
     <link href="http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/"/>
     <id>http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/</id>
     <published>2017-05-28T01:24:28.409Z</published>
-    <updated>2017-06-07T04:43:57.710Z</updated>
+    <updated>2017-06-08T13:04:33.419Z</updated>
     
     <content type="html"><![CDATA[<p>为什么要用Github Page搭建博客，借用<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰</a>的话说，喜欢写Blog的人，会经历三个阶段:</p>
 <ul>
@@ -62,7 +134,7 @@
 <p><img src="https://show8.github.io/blogimage/hexo3.png" alt="配置文件图2"></p>
 <p>修改文件里面的deploy。其中的repository就改成你刚刚复制的地址。保存这个文件。</p>
 <p><img src="https://show8.github.io/blogimage/hexo1.png" alt="配置文件图3"></p>
-<h3 id="与github建立联系-设置SSH-keys"><a href="#与github建立联系-设置SSH-keys" class="headerlink" title="与github建立联系-设置SSH keys"></a>与github建立联系-设置SSH keys</h3><p>为了能够在本地使用git管理github上的项目，需要进行一些配置，我用用的是SSH的方法。在Git Bash输入以下指令（任意位置点击鼠标右键），检查是否已经存在了SSH keys。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div></pre></td></tr></table></figure></p>
+<h3 id="与github建立联系-设置SSH-keys"><a href="#与github建立联系-设置SSH-keys" class="headerlink" title="与github建立联系-设置SSH keys"></a>与github建立联系-设置SSH keys</h3><p>为了能够在本地使用git管理github上的项目，需要进行一些配置，我用的是SSH的方法。在Git Bash输入以下指令（任意位置点击鼠标右键），检查是否已经存在了SSH keys。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div></pre></td></tr></table></figure></p>
 <p>如果不存在没有关系，如果存在的话，直接删除.ssh文件夹里面所有文件</p>
 <p><img src="https://show8.github.io/blogimage/hexo4.png" alt="配置文件图4"></p>
 <p>输入以下指令（邮箱就是你注册Github时候的邮箱）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;show_wlz@163.com&quot;</div></pre></td></tr></table></figure></p>
@@ -75,7 +147,8 @@
 <p>当然你也可以打开文件直接复制其内容（下图中文件就是刚刚拷贝的Key）：</p>
 <p><img src="https://show8.github.io/blogimage/hexo5.png" alt="配置文件图5"></p>
 <p>然后，在GitHub右上方点击头像，选择<code>Settings</code>，在右边的<code>Personal settings</code>侧边栏选择<code>SSH and GPG Keys</code>。接着选择SSH keys右边的<code>New SSH key</code>,其中Title随便写，然后粘贴key，点击”Add key”按钮。最后，测试链接：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
-<p>这时候可能会看到有警告，没事，输入“yes”就好。<br>为了能够使Hexo部署到GitHub上，需要安装一个插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>这时候可能会看到有警告，没事，输入“yes”就好。</p>
+<p>为了能够使Hexo部署到GitHub上，需要安装一个插件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
 <p>最后一步，快要成功了，输入以下指令部署到GitHub上：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
 <p>OK，我们的博客就已经完全搭建起来了，在浏览器输入（当然，是你的用户名）：</p>
 <p><a href="https://showcc.github.io/">https://showcc.github.io/</a></p>
