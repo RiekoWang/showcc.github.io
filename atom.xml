@@ -92,7 +92,7 @@
     <link href="http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/"/>
     <id>http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/</id>
     <published>2017-05-28T01:24:28.409Z</published>
-    <updated>2017-06-11T01:38:59.187Z</updated>
+    <updated>2017-06-11T01:42:07.483Z</updated>
     
     <content type="html"><![CDATA[<p>为什么要用Github Page搭建博客，借用<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank" rel="external">阮一峰</a>的话说，喜欢写Blog的人，会经历三个阶段:</p>
 <ul>
@@ -100,7 +100,7 @@
 <li>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</li>
 <li>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</li>
 </ul>
-<p>哈哈 我目前就处于第一阶段，捣鼓着玩的，整个搭建过程都是照着网上做的，期间也遇到了些问题。第一次接触 <code>GitHub</code>， <code>Github</code>是一个全世界程序员聚集的地方，大家相互分享自己写的代码，提升别人，也提升自己。<br>本篇主要是对使用GitHub Pages和Hexo搭建独立博客的一些总结。如果是小白的话，可以先花时间去了解下：<br><a id="more"></a></p>
+<p>哈哈 我目前就处于第一阶段，捣鼓着玩的，整个搭建过程都是照着网上做的，期间也遇到了些问题。第一次接触 <code>GitHub</code>， <code>Github</code>是一个全世界程序员聚集的地方，大家相互分享自己写的代码，提升别人，也提升自己。<br>本文主要是对使用GitHub Pages和Hexo搭建独立博客的一些总结。如果是小白的话，可以先花时间去了解下：<br><a id="more"></a></p>
 <ul>
 <li><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="external">Git</a> </li>
 <li><a href="https://github.com/" target="_blank" rel="external">GitHub</a></li>
@@ -185,7 +185,7 @@
 &lt;li&gt;第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。&lt;/li&gt;
 &lt;li&gt;第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;哈哈 我目前就处于第一阶段，捣鼓着玩的，整个搭建过程都是照着网上做的，期间也遇到了些问题。第一次接触 &lt;code&gt;GitHub&lt;/code&gt;， &lt;code&gt;Github&lt;/code&gt;是一个全世界程序员聚集的地方，大家相互分享自己写的代码，提升别人，也提升自己。&lt;br&gt;本篇主要是对使用GitHub Pages和Hexo搭建独立博客的一些总结。如果是小白的话，可以先花时间去了解下：&lt;br&gt;
+&lt;p&gt;哈哈 我目前就处于第一阶段，捣鼓着玩的，整个搭建过程都是照着网上做的，期间也遇到了些问题。第一次接触 &lt;code&gt;GitHub&lt;/code&gt;， &lt;code&gt;Github&lt;/code&gt;是一个全世界程序员聚集的地方，大家相互分享自己写的代码，提升别人，也提升自己。&lt;br&gt;本文主要是对使用GitHub Pages和Hexo搭建独立博客的一些总结。如果是小白的话，可以先花时间去了解下：&lt;br&gt;
     
     </summary>
     
