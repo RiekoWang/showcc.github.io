@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showcc.github.io/"/>
-  <updated>2017-06-25T08:38:12.766Z</updated>
+  <updated>2017-07-13T03:45:18.054Z</updated>
   <id>http://showcc.github.io/</id>
   
   <author>
@@ -16,13 +16,124 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>随手记（问题总结）</title>
+    <link href="http://showcc.github.io/2017/07/13/With%20the%20notes/"/>
+    <id>http://showcc.github.io/2017/07/13/With the notes/</id>
+    <published>2017-07-13T01:38:46.537Z</published>
+    <updated>2017-07-13T03:45:18.054Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="总结下开发时候随手记的一些东西，以后方便查询。"><a href="#总结下开发时候随手记的一些东西，以后方便查询。" class="headerlink" title="总结下开发时候随手记的一些东西，以后方便查询。"></a>总结下开发时候随手记的一些东西，以后方便查询。</h2><hr>
+<ol>
+<li>display:table-cell——————display:table-cell属性指让标签元素以表格单元格的形式呈现，类似于td标签。</li>
+<li>tap-highlight-color——————设置或检索对象的轻按时高亮。 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色 如果想取消这个高亮，将值设置为全透明即可，比如transparent</li>
+<li>-webkit-appearance: none; 去掉ios的input阴影</li>
+<li><p>移动端触摸事件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(&apos;.WL_xinjian&apos;).bind(&apos;touchstart&apos;,function()&#123;</div><div class="line">		$(this).css(&apos;background&apos;,&apos;#d9d9d9&apos;);</div><div class="line">	&#125;);</div><div class="line">	$(&apos;.WL_xinjian&apos;).bind(&apos;touchend&apos;,function()&#123;</div><div class="line">		$(this).css(&apos;background&apos;,&apos;#fff&apos;);</div><div class="line">	&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>手机端的轮播图 初始化switch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//observer: true, //修改swiper自己或子元素时，自动初始化swiper</div><div class="line">//observeParents: true, //修改swiper的父元素时，自动初始化swipe</div><div class="line">preventClicks : false,  //当swiper在触摸时阻止默认事件（preventDefault），用于防止触摸时触发链接跳转。</div><div class="line">preventLinksPropagation : true,  //阻止click冒泡。拖动Swiper时阻止click事件。</div><div class="line">width : window.innerWidth,  </div><div class="line">observer : true  //当改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，自动初始化swiper</div></pre></td></tr></table></figure>
+</li>
+<li><p>微信端图片缩放</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$(&apos;body&apos;).on(&apos;click&apos;,&apos;img&apos;,function()&#123;</div><div class="line"> var imgs=new Array();</div><div class="line">   	  var nowImgurl=&quot;&quot;;</div><div class="line">var imgObj=document.getElementsByTagName(&apos;img&apos;);</div><div class="line">for(var i=0; i&lt;imgObj.length; i++)</div><div class="line">      &#123;</div><div class="line">        imgs.push(imgObj[i].src); </div><div class="line">      &#125;</div><div class="line">        nowImgurl = this.src;</div><div class="line">         	 WeixinJSBridge.invoke(&quot;imagePreview&quot;,&#123;</div><div class="line">            &quot;urls&quot;:imgs,</div><div class="line">            &quot;current&quot;:nowImgurl</div><div class="line">            &#125;)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>网站设计之常见简单实用的JavaScript特效总结（上篇）— <a href="http://click.aliyun.com/m/16034/" target="_blank" rel="external">http://click.aliyun.com/m/16034/</a><br>【javascript】typeof和instanceof的关系 — <a href="http://click.aliyun.com/m/16032/" target="_blank" rel="external">http://click.aliyun.com/m/16032/</a><br>【JavaScript】js中与变量相关的一些知识 — <a href="http://click.aliyun.com/m/16012/" target="_blank" rel="external">http://click.aliyun.com/m/16012/</a><br>31款轻量高效的开源<em>JavaScript</em>插件和库 — <a href="http://click.aliyun.com/m/16035/" target="_blank" rel="external">http://click.aliyun.com/m/16035/</a></p>
+</li>
+<li><p>HTML5 data-* 自定义属性<br>1.设置方法<br>A.直接在标签内书写，格式如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;test&quot; data-age=&quot;24&quot;&gt;</div><div class="line">    Click Here</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(document).on(&quot;pagecreate&quot;,&quot;#pageone&quot;,function()&#123;</div><div class="line">   // jQuery 事件...</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>监测上滑下滑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">	var startX = 0,</div><div class="line">        startY = 0;</div><div class="line">   document.addEventListener(&apos;touchstart&apos;,function(event)&#123;</div><div class="line">   		 x=event.touches[0].pageX;</div><div class="line">   		 y=event.touches[0].pageY;</div><div class="line">   		startX=x;</div><div class="line">   		startY=y;</div><div class="line">   &#125;,false);</div><div class="line"></div><div class="line">   document.addEventListener(&apos;touchmove&apos;,function()&#123;</div><div class="line">// 	alert(1)</div><div class="line">   		x=event.touches[0].pageX;</div><div class="line">   		y=event.touches[0].pageY;</div><div class="line">   		</div><div class="line">   		if($(&apos;.content&apos;).scrollTop()&gt;50)</div><div class="line">   			if (y - startY&gt;0) &#123;</div><div class="line">//          下滑</div><div class="line">				$(&apos;.W_jd1_parent&apos;).animate(&#123;&apos;top&apos;:0&#125;,1000,function()&#123;</div><div class="line">						$(&apos;.content&apos;).css(&apos;top&apos;,$(&apos;.bar&apos;).height());</div><div class="line">					&#125;);</div><div class="line">	        &#125;else&#123;</div><div class="line">	//      	上滑</div><div class="line">				$(&apos;.W_jd1_parent&apos;).animate(&#123;&apos;top&apos;:-100&#125;,1000,function()&#123;</div><div class="line">						$(&apos;.content&apos;).css(&apos;top&apos;,0);</div><div class="line">					&#125;);</div><div class="line">	        &#125;</div><div class="line">   &#125;,false);</div><div class="line">	document.addEventListener(&apos;touchend&apos;,function()&#123;</div><div class="line">		x=event.touches[0].pageX;</div><div class="line">   		y=event.touches[0].pageY;</div><div class="line">		if($(&apos;.content&apos;).scrollTop()&gt;50)</div><div class="line">   		&#123;&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>CSS文本超出2行就隐藏并且显示省略号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">overflow:hidden; </div><div class="line">text-overflow:ellipsis;</div><div class="line">display:-webkit-box; </div><div class="line">-webkit-box-orient:vertical;</div><div class="line">-webkit-line-clamp:2;</div></pre></td></tr></table></figure>
+</li>
+<li><p>不定宽高 让div或者 文字居中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">position:absolute;width: 100%;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);</div></pre></td></tr></table></figure>
+</li>
+<li><p>模糊背景</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-webkit-filter: blur(10px); /* Chrome, Opera */</div><div class="line">       -moz-filter: blur(10px);</div><div class="line">        -ms-filter: blur(10px);    </div><div class="line">            filter: blur(10px);</div></pre></td></tr></table></figure>
+</li>
+<li><p>span写购物车右上角 圆形 红色的玩意er</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">position: absolute;</div><div class="line">top: .1rem;</div><div class="line">left: 50%;</div><div class="line">z-index: 100;</div><div class="line">min-width: .8rem;</div><div class="line">height: .8rem;</div><div class="line">padding: 0 .2rem;</div><div class="line">margin-left: .1rem;</div><div class="line">font-size: .6rem;</div><div class="line">line-height: .8rem;</div><div class="line">color: #fff;</div><div class="line">vertical-align: top;</div><div class="line">background: red;</div><div class="line">border-radius: .5rem;</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改placeholder样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">input::-webkit-input-placeholder &#123;  </div><div class="line">font-size: 14px;</div><div class="line">color: #7d6856;</div><div class="line">&#125; </div><div class="line">input::-ms-input-placeholder &#123;  </div><div class="line">font-size: 14px;</div><div class="line">color: #7d6856;</div><div class="line">&#125; </div><div class="line">input::-o-input-placeholder &#123;  </div><div class="line">font-size: 14px;</div><div class="line">color: #7d6856;</div><div class="line">&#125; </div><div class="line">input::-moz-placeholder &#123;  </div><div class="line">font-size: 14px;</div><div class="line">color: #7d6856;</div><div class="line">&#125; </div><div class="line">input::input-placeholder &#123;  </div><div class="line">font-size: 14px;</div><div class="line">color: #7d6856;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>禁止选中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">moz-user-select: -moz-none;</div><div class="line">-moz-user-select: none;</div><div class="line">-o-user-select:none;</div><div class="line">-khtml-user-select:none;</div><div class="line">-webkit-user-select:none;</div><div class="line">-ms-user-select:none;</div><div class="line">user-select:none;</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置或检索对象的轻按时高亮。当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色如果想取消这个高亮，将值设置为全透明即可，比如transparent</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">tap-highlight-color：</div><div class="line">.demo1 &#123;</div><div class="line">    -webkit-tap-highlight-color: red;</div><div class="line">&#125;</div><div class="line">.demo2 &#123;</div><div class="line">    -webkit-tap-highlight-color: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>live()为动态创建的DOM加事件时候使用,off()取消事件<br>移除所有 </p><p> 元素上的 click 事件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(&quot;button&quot;).click(function()&#123;</div><div class="line">   $(&quot;p&quot;).off(&quot;click&quot;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=7&quot;&gt;</code><br>#以上代码告诉IE浏览器，无论是否用DTD声明文档标准，IE8/9都会以IE7引擎来渲染页面。<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=8&quot;&gt;</code><br>#以上代码告诉IE浏览器，IE8/9都会以IE8引擎来渲染页面。<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</code><br>#以上代码告诉IE浏览器，IE8/9及以后的版本都会以最高版本IE来渲染页面。<br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=7,IE=9&quot;&gt;</code><br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=7,9&quot;&gt;</code><br><code>&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge,chrome=1&quot;&gt;</code><br>#以上代码IE=edge告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame.</p>
+</li>
+<li><p>object-fit 类似于background-size：cover;  object-position 图片img图片控制大小位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">object-position: 100% 100%;</div><div class="line">.fill &#123; object-fit: fill; &#125;</div><div class="line">.contain &#123; object-fit: contain; &#125;</div><div class="line">.cover &#123; object-fit: cover; &#125;</div><div class="line">.none &#123; object-fit: none; &#125;</div><div class="line">.scale-down &#123; object-fit: scale-down; &#125;</div></pre></td></tr></table></figure>
+<p>fill: 中文释义“填充”。默认值。替换内容拉伸填满整个content box, 不保证保持原有的比例。<br>contain: 中文释义“包含”。保持原有尺寸比例。保证替换内容尺寸一定可以在容器里面放得下。因此，此参数可能会在容器内留下空白。<br>cover: 中文释义“覆盖”。保持原有尺寸比例。保证替换内容尺寸一定大于容器尺寸，宽度和高度至少有一个和容器一致。因此，此参数可能会让替换内容（如图片）部分区域不可见。<br>none: 中文释义“无”。保持原有尺寸比例。同时保持替换内容原始尺寸大小。<br>scale-down: 中文释义“降低”。就好像依次设置了none或contain, 最终呈现的是尺寸比较小的那个。</p>
+</li>
+<li><p>CSS hack方式一：条件注释法<br>这种方式是IE浏览器专有的Hack方式，微软官方推荐使用的hack方式。举例如下</p>
+<p>只在IE下生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE]&gt;</div><div class="line">这段文字只在IE浏览器显示</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p>只在IE6下生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if IE 6]&gt;</div><div class="line">这段文字只在IE6浏览器显示</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p>只在IE6以上版本生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if gte IE 6]&gt;</div><div class="line">这段文字只在IE6以上(包括)版本IE浏览器显示</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p>只在IE8上不生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if ! IE 8]&gt;</div><div class="line">这段文字在非IE8浏览器显示</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+<p>非IE浏览器生效</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;!--[if !IE]&gt;</div><div class="line">这段文字只在非IE浏览器显示</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>background-attachment属性设置背景图像是否固定或者随着页面的其余部分滚动，当设置为fixed时页面的其余部分滚动时，背景图像不会移动。</p>
+</li>
+<li><p>判断ie6789</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">if(navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE6.0&quot;) </div><div class="line">&#123; </div><div class="line">// alert(&quot;IE 6.0&quot;); </div><div class="line">&#125; </div><div class="line">else if(navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE7.0&quot;) </div><div class="line">&#123; </div><div class="line">// alert(&quot;IE 7.0&quot;); </div><div class="line">&#125; </div><div class="line">else if(navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE8.0&quot;) </div><div class="line">&#123; </div><div class="line">// alert(&quot;IE 8.0&quot;); </div><div class="line"> // alert(&apos;您的浏览器版本过低,请升级到IE9.0以上版本或者使用其他浏览器&apos;)	</div><div class="line">&#125; </div><div class="line">else if(navigator.appName == &quot;Microsoft Internet Explorer&quot; &amp;&amp; navigator.appVersion .split(&quot;;&quot;)[1].replace(/[ ]/g,&quot;&quot;)==&quot;MSIE9.0&quot;) </div><div class="line">&#123; </div><div class="line">// alert(&quot;IE 9.0&quot;); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>kbd标签标签定义键盘文本<br>pre 元素可定义预格式化的文本 代码啥格式 输出就是什么格式<br>samp 标签表示一段用户应该对其没有什么其他解释的文本字符。要从正常的上下文抽取这些字符时，通常要用到这个标签。<br>var 标签表示变量的名称，或者由用户提供的值。</p>
+</li>
+<li><p>简单的打字动画效果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style type=&quot;text/css&quot; media=&quot;screen&quot;&gt;</div><div class="line">	@keyframes typing &#123; from &#123; width: 0; &#125; &#125;</div><div class="line">	@keyframes blink-caret &#123; 50% &#123; border-color: transparent; &#125; &#125;</div><div class="line">	h1 &#123; </div><div class="line">		font: bold 100%,Consolas;</div><div class="line">		/*Consolas是一套固定字符宽度的字型，属无衬线字体*/</div><div class="line">		border-right: 2px solid red;</div><div class="line">		/*width: 16.5em;*/ /* fallback */</div><div class="line">		/*width: 30ch;*/ /* # of chars */</div><div class="line">		/*margin: 2em 1em;*/</div><div class="line">		/*width: 16.5em英文宽度*/</div><div class="line">		width: 29.8em;</div><div class="line">		/*中文宽度*/</div><div class="line">		white-space: nowrap;</div><div class="line">		overflow: hidden;</div><div class="line">		animation: typing 10s steps(30, start),blink-caret .5s step-end infinite alternate;</div><div class="line">		/*steps(30, end) 第一个参数30这个动画分30步执行完 第二个start 第一帧是第一步动画结束此时已经出现一个字了  end 第一帧是第一步动画开始*/</div><div class="line">		/*step-start 等同于 steps(10,start) 动画分成10步，动画执行时为开始左侧端点的部分为开始。</div><div class="line">		step-end 等同于 steps(10,end) 动画分成10步，动画执行时以结尾端点为开始，默认值为 end。*/</div><div class="line">	&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;h1&gt;王立战好帅 &amp;nbsp; 阿萨德阿萨德&lt;/h1&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if($(&apos;.jiji&apos;).eq(index).is(&apos;:hide’))&#123;</div><div class="line">	如果jiji元素此时状态为隐藏</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">width=device-width ：表示宽度是设备屏幕的宽度</div><div class="line">initial-scale=1.0 ：表示初始的缩放比例</div><div class="line">minimum-scale=0.5 ：表示最小的缩放比例</div><div class="line">maximum-scale=2.0 ：表示最大的缩放比例</div><div class="line">user-scalable=yes ：表示用户是否可以调整缩放比例</div></pre></td></tr></table></figure>
+</li>
+<li><p>禁止鼠标右键,f12键</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">document.oncontextmenu=function()&#123; </div><div class="line">    return false; </div><div class="line">&#125; </div><div class="line">$(document).keydown(function (e)&#123;</div><div class="line">	e = window.event || e || e.which;</div><div class="line">	if(e.keyCode==123)&#123;</div><div class="line">		location.href=&apos;https://showcc.github.io&apos;;</div><div class="line">		return false;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>HTML5 input标签中的required属性，规定必需在提交之前填写输入字段 提示信息。例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;form action=&quot;demo_form.asp&quot; method=&quot;get&quot;&gt;</div><div class="line">  Name: &lt;input type=&quot;text&quot; name=&quot;usr_name&quot; required=&quot;required&quot; /&gt;</div><div class="line">  &lt;input type=&quot;submit&quot; /&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>鼠标样式cursor：not-allowed，是一个红色的圈加一个斜杠，表示禁止的意思，似乎IE，chrome firefox 都能够正常显示，很好用。</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;总结下开发时候随手记的一些东西，以后方便查询。&quot;&gt;&lt;a href=&quot;#总结下开发时候随手记的一些东西，以后方便查询。&quot; class=&quot;headerlink&quot; title=&quot;总结下开发时候随手记的一些东西，以后方便查询。&quot;&gt;&lt;/a&gt;总结下开发时候随手记的一些东西，以
+    
+    </summary>
+    
+    
+      <category term="随手记" scheme="http://showcc.github.io/tags/%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
+    
+      <category term="问题总结" scheme="http://showcc.github.io/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>毕业季</title>
     <link href="http://showcc.github.io/2017/06/25/Graduation%20season/"/>
     <id>http://showcc.github.io/2017/06/25/Graduation season/</id>
     <published>2017-06-25T08:37:59.058Z</published>
-    <updated>2017-06-25T08:38:12.766Z</updated>
+    <updated>2017-07-13T01:51:35.242Z</updated>
     
-    <content type="html"><![CDATA[<p>时光匆匆，当我伸手去拦时，它却如悄悄地从指边溜掉了。<br>我的大学生活就如这流水般缓缓而又匆匆地流淌着到了她的尽头，留给我的，是无尽的感慨收获和即将入海的宽广无限。<br><img src="https://show8.github.io/blogimage/by1.jpg" alt="图1"><br><a id="more"></a><br>毕业季节，愿我们的友谊永远不散。<br>再深情望一眼，曾经充满回忆的校园。<br>回忆终是回忆,到最后发现什么都不会有</p>
+    <content type="html"><![CDATA[<p>时光匆匆，当我伸手去拦时，它却如微风般悄悄地从指边溜掉了。<br>我的大学生活就如这流水般缓缓而又匆匆地流淌着到了她的尽头，留给我的，是无尽的感慨收获和即将入海的宽广无限。<br><img src="https://show8.github.io/blogimage/by1.jpg" alt="图1"><br><a id="more"></a><br>毕业季节，愿我们的友谊永远不散。<br>再深情望一眼，曾经充满回忆的校园。<br>回忆终是回忆,到最后发现什么都不会有</p>
 <p><img src="https://show8.github.io/blogimage/by2.jpg" alt="图2"></p>
 <p>曲终人散,唱不出世间温暖;诩诩文字,写不尽心中悲喜!<br>毕业了，满足是最真实的财富。贪婪是最真实的贫穷<br>毕业了，在那校园里面还残留着我们多少身影，还有多少回忆，而我们却要离开<br>三年的记忆，忘了吧。只为会笑的明天，不带走任何牵连、一点思念。只是不想流泪</p>
 <p><img src="https://show8.github.io/blogimage/by4.jpg" alt="图3"></p>
@@ -33,7 +144,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;时光匆匆，当我伸手去拦时，它却如悄悄地从指边溜掉了。&lt;br&gt;我的大学生活就如这流水般缓缓而又匆匆地流淌着到了她的尽头，留给我的，是无尽的感慨收获和即将入海的宽广无限。&lt;br&gt;&lt;img src=&quot;https://show8.github.io/blogimage/by1.jpg&quot; alt=&quot;图1&quot;&gt;&lt;br&gt;
+      &lt;p&gt;时光匆匆，当我伸手去拦时，它却如微风般悄悄地从指边溜掉了。&lt;br&gt;我的大学生活就如这流水般缓缓而又匆匆地流淌着到了她的尽头，留给我的，是无尽的感慨收获和即将入海的宽广无限。&lt;br&gt;&lt;img src=&quot;https://show8.github.io/blogimage/by1.jpg&quot; alt=&quot;图1&quot;&gt;&lt;br&gt;
     
     </summary>
     
@@ -51,7 +162,7 @@
     <link href="http://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/"/>
     <id>http://showcc.github.io/2017/06/08/Change the computer update the hexo blog/</id>
     <published>2017-06-08T12:30:14.850Z</published>
-    <updated>2017-06-08T13:36:04.525Z</updated>
+    <updated>2017-06-25T08:32:17.934Z</updated>
     
     <content type="html"><![CDATA[<p>由于我的博客是在公司电脑上搭建的，一旦离开公司电脑在自己的电脑上更新博客，就要重新配置，到底该怎么配置呢？于是我在网上搜了一番，写下这篇博客，总结一下。</p>
 <h3 id="安装-Git，安装Node-js"><a href="#安装-Git，安装Node-js" class="headerlink" title="安装 Git，安装Node.js"></a>安装 Git，安装Node.js</h3><p>首先肯定要先安装Git、Node.js,下面是下载的地址。</p>
