@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showcc.github.io/"/>
-  <updated>2017-07-13T04:02:54.027Z</updated>
+  <updated>2017-07-13T04:04:40.556Z</updated>
   <id>http://showcc.github.io/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="http://showcc.github.io/2017/07/13/With%20the%20notes/"/>
     <id>http://showcc.github.io/2017/07/13/With the notes/</id>
     <published>2017-07-13T01:38:46.537Z</published>
-    <updated>2017-07-13T04:02:54.027Z</updated>
+    <updated>2017-07-13T04:04:40.556Z</updated>
     
     <content type="html"><![CDATA[<h2 id="总结下开发时候随手记的一些东西，以后方便查询。"><a href="#总结下开发时候随手记的一些东西，以后方便查询。" class="headerlink" title="总结下开发时候随手记的一些东西，以后方便查询。"></a>总结下开发时候随手记的一些东西，以后方便查询。</h2><hr>
-<p><img src="https://show8.github.io/blogimage/suibi.jpg" alt="图片1"></p>
+<p><img src="https://show8.github.io/blogimage/suibi.jpg" alt="图片1"><br><a id="more"></a></p>
 <ol>
 <li>display:table-cell——————display:table-cell属性指让标签元素以表格单元格的形式呈现，类似于td标签。</li>
 <li>tap-highlight-color——————设置或检索对象的轻按时高亮。 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色 如果想取消这个高亮，将值设置为全透明即可，比如transparent</li>
@@ -116,7 +116,8 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;总结下开发时候随手记的一些东西，以后方便查询。&quot;&gt;&lt;a href=&quot;#总结下开发时候随手记的一些东西，以后方便查询。&quot; class=&quot;headerlink&quot; title=&quot;总结下开发时候随手记的一些东西，以后方便查询。&quot;&gt;&lt;/a&gt;总结下开发时候随手记的一些东西，以
+      &lt;h2 id=&quot;总结下开发时候随手记的一些东西，以后方便查询。&quot;&gt;&lt;a href=&quot;#总结下开发时候随手记的一些东西，以后方便查询。&quot; class=&quot;headerlink&quot; title=&quot;总结下开发时候随手记的一些东西，以后方便查询。&quot;&gt;&lt;/a&gt;总结下开发时候随手记的一些东西，以后方便查询。&lt;/h2&gt;&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;https://show8.github.io/blogimage/suibi.jpg&quot; alt=&quot;图片1&quot;&gt;&lt;br&gt;
     
     </summary>
     
