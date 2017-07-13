@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showcc.github.io/"/>
-  <updated>2017-07-13T03:45:18.054Z</updated>
+  <updated>2017-07-13T04:00:02.691Z</updated>
   <id>http://showcc.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://showcc.github.io/2017/07/13/With%20the%20notes/"/>
     <id>http://showcc.github.io/2017/07/13/With the notes/</id>
     <published>2017-07-13T01:38:46.537Z</published>
-    <updated>2017-07-13T03:45:18.054Z</updated>
+    <updated>2017-07-13T04:00:02.691Z</updated>
     
     <content type="html"><![CDATA[<h2 id="总结下开发时候随手记的一些东西，以后方便查询。"><a href="#总结下开发时候随手记的一些东西，以后方便查询。" class="headerlink" title="总结下开发时候随手记的一些东西，以后方便查询。"></a>总结下开发时候随手记的一些东西，以后方便查询。</h2><hr>
+<p><img src="https://github.com/show8/blogimage/suibi.jpg" alt="图片1"></p>
 <ol>
 <li>display:table-cell——————display:table-cell属性指让标签元素以表格单元格的形式呈现，类似于td标签。</li>
 <li>tap-highlight-color——————设置或检索对象的轻按时高亮。 当用户轻按一个链接或者JavaScript可点击元素时给元素覆盖一个高亮色 如果想取消这个高亮，将值设置为全透明即可，比如transparent</li>
