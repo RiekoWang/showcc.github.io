@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端工程 | 王立战的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端工程——基础篇 喂喂喂，那个切图的，把页面写好就发给研发工程师套模板吧。你好，切图仔。不知道你的团队如何定义前端开发，据我所知，时至今日仍然有很多团队会把前端开发归类为产品或者设计岗位，虽然身份之争多少有些无谓，但我对这种偏见还是心存芥蒂，酝酿了许久，决定写一个系列的文章，试着从工程的角度系统的介绍一下我对前端，尤其是Web前端的理解。">
+<meta name="keywords" content="前端工程,三个阶段">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端工程">
+<meta property="og:url" content="http://showcc.github.io/2017/07/21/Front-end engineering/index.html">
+<meta property="og:site_name" content="王立战的博客">
+<meta property="og:description" content="前端工程——基础篇 喂喂喂，那个切图的，把页面写好就发给研发工程师套模板吧。你好，切图仔。不知道你的团队如何定义前端开发，据我所知，时至今日仍然有很多团队会把前端开发归类为产品或者设计岗位，虽然身份之争多少有些无谓，但我对这种偏见还是心存芥蒂，酝酿了许久，决定写一个系列的文章，试着从工程的角度系统的介绍一下我对前端，尤其是Web前端的理解。">
+<meta property="og:image" content="https://show8.github.io/blogimage/G1.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G2.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G3.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G4.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G5.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G6.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G7.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G8.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G9.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G10.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G11.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G12.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G13.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G14.gif">
+<meta property="og:image" content="https://show8.github.io/blogimage/G15.png">
+<meta property="og:image" content="https://show8.github.io/blogimage/G16.png">
+<meta property="og:updated_time" content="2017-07-21T13:38:19.760Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端工程">
+<meta name="twitter:description" content="前端工程——基础篇 喂喂喂，那个切图的，把页面写好就发给研发工程师套模板吧。你好，切图仔。不知道你的团队如何定义前端开发，据我所知，时至今日仍然有很多团队会把前端开发归类为产品或者设计岗位，虽然身份之争多少有些无谓，但我对这种偏见还是心存芥蒂，酝酿了许久，决定写一个系列的文章，试着从工程的角度系统的介绍一下我对前端，尤其是Web前端的理解。">
+<meta name="twitter:image" content="https://show8.github.io/blogimage/G1.png">
+  
+    <link rel="alternative" href="/atom.xml" title="王立战的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Rieko</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="https://show8.github.io">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/2017-06-17/" style="font-size: 10px;">2017.06.17</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/三个阶段/" style="font-size: 10px;">三个阶段</a> <a href="/tags/前端工程/" style="font-size: 10px;">前端工程</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/毕业/" style="font-size: 10px;">毕业</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a> <a href="/tags/随手记/" style="font-size: 10px;">随手记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">我是一个很哇塞的小伙儿！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Rieko</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Rieko</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="https://show8.github.io">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Front-end engineering" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/07/21/Front-end engineering/" class="article-date">
+      <time datetime="2017-07-21T09:48:24.592Z" itemprop="datePublished">2017-07-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端工程
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/三个阶段/">三个阶段</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端工程/">前端工程</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="前端工程——基础篇"><a href="#前端工程——基础篇" class="headerlink" title="前端工程——基础篇"></a>前端工程——基础篇</h1><hr>
+<p>喂喂喂，那个切图的，把页面写好就发给研发工程师套模板吧。<br>你好，切图仔。<br>不知道你的团队如何定义前端开发，据我所知，时至今日仍然有很多团队会把前端开发归类为产品或者设计岗位，虽然身份之争多少有些无谓，但我对这种偏见还是心存芥蒂，酝酿了许久，决定写一个系列的文章，试着从工程的角度系统的介绍一下我对前端，尤其是Web前端的理解。<br><a id="more"></a><br>只要我们还把自己的工作看作为一项软件开发活动，那么我相信读过下面的内容你也一定会有所共鸣。</p>
+<h1 id="前端，是一种GUI软件"><a href="#前端，是一种GUI软件" class="headerlink" title="前端，是一种GUI软件"></a>前端，是一种GUI软件</h1><hr>
+<p>现如今前端可谓包罗万象，产品形态五花八门，涉猎极广，什么高大上的基础库/框架，拽炫酷的宣传页面，还有屌炸天的小游戏……不过这些一两个文件的小项目并非是前端技术的主要应用场景，更具商业价值的则是复杂的Web应用，它们功能完善，界面繁多，为用户提供了完整的产品体验，可能是新闻聚合网站，可能是在线购物平台，可能是社交网络，可能是金融信贷应用，可能是音乐互动社区，也可能是视频上传与分享平台……<br><code>从本质上讲，所有Web应用都是一种运行在网页浏览器中的软件，这些软件的图形用户界面（Graphical User Interface，简称GUI）即为前端。</code><br>如此复杂的Web应用，动辄几十上百人共同开发维护，其前端界面通常也颇具规模，工程量不亚于一般的传统GUI软件：</p>
+<p><img src="https://show8.github.io/blogimage/G1.png" alt="图1"></p>
+<p>尽管Web应用的复杂程度与日俱增，用户对其前端界面也提出了更高的要求，但时至今日仍然没有多少前端开发者会从软件工程的角度去思考前端开发，来助力团队的开发效率，更有甚者还对前端保留着”如玩具般简单“的刻板印象，日复一日，刀耕火种。</p>
+<p>历史悠久的前端开发，始终像是放养的野孩子，原始如斯，不免让人慨叹！</p>
+<h1 id="前端工程的三个阶段"><a href="#前端工程的三个阶段" class="headerlink" title="前端工程的三个阶段"></a>前端工程的三个阶段</h1><hr>
+<p>现在的前端开发倒也并非一无所有，回顾一下曾经经历过或听闻过的项目，为了提升其前端开发效率和运行性能，前端团队的工程建设大致会经历三个阶段：</p>
+<h3 id="第一阶段：库-框架选型"><a href="#第一阶段：库-框架选型" class="headerlink" title="第一阶段：库/框架选型"></a>第一阶段：库/框架选型</h3><p><img src="https://show8.github.io/blogimage/G2.png" alt="图2"></p>
+<p>前端工程建设的第一项任务就是根据项目特征进行技术选型。</p>
+<p>基本上现在没有人完全从0开始做网站，哪怕是政府项目用个jquery都很正常吧，React/Angularjs等框架横空出世，解放了不少生产力，合理的技术选型可以为项目节省许多工程量这点毋庸置疑。</p>
+<h3 id="第二阶段：简单构建优化"><a href="#第二阶段：简单构建优化" class="headerlink" title="第二阶段：简单构建优化"></a>第二阶段：简单构建优化</h3><p><img src="https://show8.github.io/blogimage/G3.png" alt="图3"></p>
+<p>选型之后基本上就可以开始敲码了，不过光解决开发效率还不够，必须要兼顾运行性能。前端工程进行到第二阶段会选型一种构建工具，对代码进行压缩，校验，之后再以页面为单位进行简单的资源合并。</p>
+<p>前端开发工程化程度之低，常常出乎我的意料，我之前在百度工作时是没有多少概念的，直到离开大公司的温室，去到业界与更多的团队交流才发现，能做到这个阶段在业界来说已然超出平均水平，属于“具备较高工程化程度”的团队了，查看网上形形色色的网页源代码，能做到最基本的JS/CSS压缩的Web应用都已跨入标准互联网公司行列，不难理解为什么很多前端团队对于前端工程构建的认知还仅停留在“压缩、校验、合并”这种程度。</p>
+<h3 id="第三阶段：JS-CSS模块化开发"><a href="#第三阶段：JS-CSS模块化开发" class="headerlink" title="第三阶段：JS/CSS模块化开发"></a>第三阶段：JS/CSS模块化开发</h3><p><img src="https://show8.github.io/blogimage/G4.png" alt="图4"></p>
+<p>分而治之是软件工程中的重要思想，是复杂系统开发和维护的基石，这点放在前端开发中同样适用。在解决了基本开发效率运行效率问题之后，前端团队开始思考维护效率，模块化是目前前端最流行的分治手段。<br>`<br>很多人觉得模块化开发的工程意义是复用，我不太认可这种看法，在我看来，模块化开发的最大价值应该是分治，是分治，分治！（重说三）。</p>
+<p>不管你将来是否要复用某段代码，你都有充分的理由将其分治为一个模块。<br>`<br>JS模块化方案很多，AMD/CommonJS/UMD/ES6 Module等，对应的框架和工具也一大堆，说起来很烦，大家自行百度吧；CSS模块化开发基本都是在less、sass、stylus等预处理器的import/mixin特性支持下实现的。</p>
+<p>虽然这些技术由来已久，在如今这个“言必及React”的时代略显落伍，但想想业界的绝大多数团队的工程化落后程度，放眼望去，毫不夸张的说，能达到第三阶段的前端团队已属于高端行列，基本具备了开发维护一般规模Web应用的能力。</p>
+<p>然而，做到这些就够了么？Naive！</p>
+<h3 id="第四阶段"><a href="#第四阶段" class="headerlink" title="第四阶段"></a>第四阶段</h3><p><code>前端是一种技术问题较少、工程问题较多的软件开发领域。</code><br>当我们要开发一款完整的Web应用时，前端将面临更多的工程问题，比如：</p>
+<ul>
+<li>大体量：多功能、多页面、多状态、多系统；</li>
+<li>大规模：多人甚至多团队合作开发；</li>
+<li>高性能：CDN部署、缓存控制、文件指纹、缓存复用、请求合并、按需加载、同步/异步加载、移动端首屏CSS内嵌、HTTP 2.0服务端资源推送。</li>
+</ul>
+<p><code>扩展阅读：大公司里怎样开发和部署前端代码？</code><br>这些无疑是一系列严肃的系统工程问题。</p>
+<p>前面讲的三个阶段虽然相比曾经“茹毛饮血”的时代进步不少，但用于支撑第四阶段的多人合作开发以及精细的性能优化似乎还欠缺点什么。</p>
+<p>到底，缺什么呢？</p>
+<h4 id="没有银弹"><a href="#没有银弹" class="headerlink" title="没有银弹"></a>没有银弹</h4><p>读过<a href="https://book.douban.com/subject/2230248/" target="_blank" rel="external">《人月神话》</a>的人应该都听说过，软件工程 <a href="https://baike.baidu.com/item/%E6%B2%A1%E6%9C%89%E9%93%B6%E5%BC%B9" target="_blank" rel="external">没有银弹</a>。没错，前端开发同样没有银弹，可是现在是连™铅弹都没有的年月！（刚有了BB弹，摔）</p>
+<p>前端历来以“简单”著称，在前端开发者群体中，小而美的价值观占据着主要的话语权，甚至成为了某种信仰，想与其他人交流一下工程方面的心得，得到的回应往往都是两个字：太重。<br><code>重你妹！你的脑容量只有4K吗？</code><br>工程方案其实也可以小而美！只不过它的小而美不是指代码量，而是指“规则”。找到问题的根源，用最少最简单明了的规则制定出最容易遵守最容易理解的开发规范或工具，以提升开发效率和工程质量，这同样是小而美的典范！</p>
+<p>2011年我有幸参与到 FIS 项目中，与百度众多大中型项目的前端研发团队共同合作，不断探索实践前端开发的工程化解决方案，13年离开百度去往UC，面对完全不同的产品形态，不同的业务场景，不同的适配终端，甚至不同的网络环境，过往的方法论仍然能够快速落地，为多个团队的不同业务场景量身定制出合理的前端解决方案。</p>
+<p>这些经历让我明悟了一个道理：<br><code>进入第四阶段，我们只需做好两件事就能大幅提升前端开发效率，并且兼顾运行性能，那就是——组件化开发与资源管理。</code></p>
+<h4 id="第一件事：组件化开发"><a href="#第一件事：组件化开发" class="headerlink" title="第一件事：组件化开发"></a>第一件事：组件化开发</h4><p>分治的确是非常重要的工程优化手段。在我看来，前端作为一种GUI软件，光有JS/CSS的模块化还不够，对于UI组件的分治也有着同样迫切的需求：</p>
+<p><img src="https://show8.github.io/blogimage/G5.png" alt="图5"></p>
+<p>如上图，这是我所信仰的前端组件化开发理念，简单解读一下：</p>
+<ol>
+<li>页面上的每个 独立的 可视/可交互区域视为一个组件；</li>
+<li>每个组件对应一个工程目录，组件所需的各种资源都在这个目录下就近维护；</li>
+<li>由于组件具有独立性，因此组件与组件之间可以 自由组合；</li>
+<li>页面只不过是组件的容器，负责组合组件形成功能完整的界面；</li>
+<li>当不需要某个组件，或者想要替换组件时，可以整个目录删除/替换。</li>
+</ol>
+<p>其中第二项描述的就近维护原则，是我觉得最具工程价值的地方，它为前端开发提供了很好的分治策略，每个开发者都将清楚的知道，自己所开发维护的功能单元，其代码必然存在于对应的组件目录中，在那个目录下能找到有关这个功能单元的所有内部逻辑，样式也好，JS也好，页面结构也好，都在那里。</p>
+<p>组件化开发具有较高的通用性，无论是前端渲染的单页面应用，还是后端模板渲染的多页面应用，组件化开发的概念都能适用。组件HTML部分根据业务选型的不同，可以是静态的HTML文件，可以是前端模板，也可以是后端模板：</p>
+<p><img src="https://show8.github.io/blogimage/G6.png" alt="图6"></p>
+<p><code>不同的技术选型决定了不同的组件封装和调用策略。</code><br>基于这样的工程理念，我们很容易将系统以独立的组件为单元进行分工划分：</p>
+<p><img src="https://show8.github.io/blogimage/G7.png" alt="图7"></p>
+<p>由于系统功能被分治到独立的模块或组件中，粒度比较精细，组织形式松散，开发者之间不会产生开发时序的依赖，大幅提升并行的开发效率，理论上允许随时加入新成员认领组件开发或维护工作，也更容易支持多个团队共同维护一个大型站点的开发。</p>
+<p>结合前面提到的模块化开发，整个前端项目可以划分为这么几种开发概念：</p>
+<p><img src="https://show8.github.io/blogimage/G8.png" alt="图8"></p>
+<p>以上5种开发概念以相对较少的规则组成了前端开发的基本工程结构，基于这些理念，我眼中的前端开发就成了这个样子：</p>
+<p><img src="https://show8.github.io/blogimage/G9.png" alt="图9"><br><img src="https://show8.github.io/blogimage/G10.png" alt="图10"><br><img src="https://show8.github.io/blogimage/G11.png" alt="图11"><br><img src="https://show8.github.io/blogimage/G12.png" alt="图12"></p>
+<p>综合上面的描述，对于一般中小规模的项目，大致可以规划出这样的源码目录结构：</p>
+<p><img src="https://show8.github.io/blogimage/G13.png" alt="图13"></p>
+<p>如果项目规模较大，涉及多个团队协作，还可以将具有相关业务功能的页面组织在一起，形成一个子系统，进一步将整个站点拆分出多个子系统来分配给不同团队维护，针对这种情况后面我会单开文章详细介绍。</p>
+<p>以上架构设计历经许多不同公司不同业务场景的前端团队验证，收获了不错的口碑，是行之有效的前端工程分治方案。<br><code>吐槽：我本人非常反对某些前端团队将前端开发划分为“JS开发”和“页面重构”两种岗位，更倾向于组件粒度的开发理念，对GUI软件开发的分工规划应该以功能为单位，而不是开发语言；对开发者的技术要求也应该是掌握完整的端内技术。</code></p>
+<h4 id="第二件事：“智能”静态资源管理"><a href="#第二件事：“智能”静态资源管理" class="headerlink" title="第二件事：“智能”静态资源管理"></a>第二件事：“智能”静态资源管理</h4><p>上面提到的模块化/组件化开发，仅仅描述了一种开发理念，也可以认为是一种开发规范，倘若你认可这规范，对它的分治策略产生了共鸣，那我们就可以继续聊聊它的具体实现了。</p>
+<p>很明显，模块化/组件化开发之后，我们最终要解决的，就是模块/组件加载的技术问题。然而前端与客户端GUI软件有一个很大的不同：<br><code>前端是一种远程部署，运行时增量下载的GUI软件</code><br>前端应用没有安装过程，其所需程序资源都部署在远程服务器，用户使用浏览器访问不同的页面来加载不同的资源，随着页面访问的增加，渐进式的将整个程序下载到本地运行，“增量下载”是前端在工程上有别于客户端GUI软件的根本原因。</p>
+<p><img src="https://show8.github.io/blogimage/G14.gif" alt="图14"></p>
+<p>上图展示了一款界面繁多功能丰富的应用，如果采用Web实现，相信也是不小的体量，如果用户第一次访问页面就强制其加载全站静态资源再展示，相信会有很多用户因为失去耐心而流失。根据“增量”的原则，我们应该精心规划每个页面的资源加载策略，使得用户无论访问哪个页面都能按需加载页面所需资源，没访问过的无需加载，访问过的可以缓存复用，最终带来流畅的应用体验。</p>
+<p>这正是Web应用“免安装”的魅力所在。</p>
+<p>由“增量”原则引申出的前端优化技巧几乎成为了性能优化的核心，有加载相关的按需加载、延迟加载、预加载、请求合并等策略；有缓存相关的浏览器缓存利用，缓存更新、缓存共享、非覆盖式发布等方案；还有复杂的BigRender、BigPipe、Quickling、PageCache等技术。这些优化方案无不围绕着如何将增量原则做到极致而展开。</p>
+<p>所以我觉得：<br><code>第四阶段前端开发最迫切需要做好的就是在基础架构中贯彻增量原则。</code><br>相信这种贯彻不会随着时间的推移而改变，在可预见的未来，无论在HTTP1.x还是HTTP2.0时代，无论在ES5亦或者ES6/7时代，无论是AMD/CommonJS/UMD亦或者ES6 module时代，无论端内技术如何变迁，我们都有足够充分的理由要做好前端程序资源的增量加载。</p>
+<p>正如前面说到的，第三阶段前端工程缺少点什么呢？我觉得是在其基础架构中缺少这样一种“智能”的资源加载方案。没有这样的方案，很难将前端应用的规模发展到第四阶段，很难实现落地前面介绍的那种组件化开发方案，也很难让多方合作高效率的完成一项大型应用的开发，并保证其最终运行性能良好。在第四阶段，我们需要强大的工程化手段来管理”玩具般简单“的前端开发。</p>
+<p>在我的印象中，Facebook是这方面探索的伟大先驱之一，早在2010年的<a href="http://velocity.oreilly.com.cn/2010/" target="_blank" rel="external">Velocity</a> China大会上，来自Facebook的David Wei博士就为业界展示了他们令人惊艳的静态网页资源管理和优化技术。</p>
+<p>David Wei博士在当年的交流会上提到过一些关于Facebook的一些产品数据：    </p>
+<ul>
+<li>Facebook整站有10000+个静态资源；</li>
+<li>每个静态资源都有可能被翻译成超过100种语言版本；</li>
+<li>每种资源又会针对浏览器生成3种不同的版本；</li>
+<li>要针对不同带宽的用户做5种不同的打包方法；</li>
+<li>有3、4个不同的用户组，用于小批次体验新的产品功能；</li>
+<li>还要考虑不同的送达方法，可以直接送达，或者通过iframe的方式提升资源并行加载的速度；</li>
+<li>静态资源的压缩和非压缩状态可切换，用于调试和定位线上问题</li>
+</ul>
+<p>这是一个状态爆炸的问题，将所有状态乘起来，整个网站的资源组合方式会达到几百万种之多（去重之后统计大概有300万种组合方式）。支撑这么大规模前端项目运行的底层架构正是魏博士在那次演讲中分享的Static Resource Management System(静态资源管理系统)，用以解决Facebook项目中有关前端工程的3D问题（Development，Deployment，Debugging）。</p>
+<p>那段时间 FIS 项目正好遇到瓶颈，当时的FIS还是一个用php写的task-based构建工具，那时候对于前端工程的认知度很低，觉得前端构建不就是几个压缩优化校验打包任务的组合吗，写好流程调度，就针对不同需求写插件呗，看似非常简单。但当我们支撑越来越多的业务团队，接触到各种不同的业务场景时，我们深刻的感受到task-based工具的粗糙，团队每天疲于根据各种业务场景编写各种打包插件，构建逻辑异常复杂，隐隐看到不可控的迹象。</p>
+<p>我们很快意识到把基础架构放到构建工具中实现是一件很愚蠢的事，试图依靠构建工具实现各种优化策略使得构建变成了一个巨大的黑盒，一旦发生问题，定位起来非常困难，而且每种业务场景都有不同的优化需求，构建工具只能通过静态分析来优化加载，具有很大的局限性，单页面/多页面/PC端/移动端/前端渲染/后端渲染/多语言/多皮肤/高级优化等等资源加载问题，总不能给每个都写一套工具吧，更何况这些问题彼此之间还可以有多种组合应用，工具根本写不过来。</p>
+<p>Facebook的做法无疑为我们亮起了一盏明灯，不过可惜它并不开源（不是技术封锁，而是这个系统依赖FB体系中的其他方面，通用性不强，开源意义不大），我们只能尝试挖掘相关信息，网上对它的完整介绍还是非常非常少，分析facebook的前端代码也没有太多收获，后来无意中发现了facebook使用的项目管理工具phabricator中的一个静态管理方案Celerity，以及相关的说明，看它的描述很像是Facebook静态资源管理系统的一个mini版！</p>
+<p>简单看过整个系统之后发现原理并不复杂（小而美的典范），它是通过一个小工具扫描所有静态资源，生成一张资源表，然后有一个PHP实现的资源管理框架（Celerity）提供了资源加载接口，替代了传统的script/link等静态的资源加载标签，最终通过查表来加载资源。</p>
+<p>虽然没有真正看过FB的那套系统，但眼前的这个小小的框架给了当时的我们足够多的启示：<br><code>静态资源管理系统 = 资源表 + 资源加载框架</code><br>多么优雅的实现啊！</p>
+<p>资源表是一份数据文件（比如JSON），是项目中所有静态资源（主要是JS和CSS）的构建信息记录，通过构建工具扫描项目源码生成，是一种k-v结构的数据，以每个资源的id为key，记录了资源的类别、部署路径、依赖关系、打包合并等内容，比如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="string">"a.js"</span>: &#123;</div><div class="line">        <span class="string">"url"</span>: <span class="string">"/static/js/a.5f100fa.js"</span>,</div><div class="line">        <span class="string">"dep"</span>: [ <span class="string">"b.js"</span>, <span class="string">"a.css"</span> ]</div><div class="line">    &#125;,</div><div class="line">    <span class="string">"a.css"</span>: &#123;</div><div class="line">        <span class="string">"url"</span>: <span class="string">"/static/css/a.63cf374.css"</span>,</div><div class="line">        <span class="string">"dep"</span>: [ <span class="string">"button.css"</span> ]</div><div class="line">    &#125;,</div><div class="line">    <span class="string">"b.js"</span>: &#123;</div><div class="line">        <span class="string">"url"</span>: <span class="string">"/static/js/b.97193bf.js"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="string">"button.css"</span>: &#123;</div><div class="line">        <span class="string">"url"</span>: <span class="string">"/static/css/button.de33108.css"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>而资源加载框架则提供一些资源引用的API，让开发者根据id来引用资源，替代静态的script/link标签来收集、去重、按需加载资源。调用这些接口时，框架通过查表来查找资源的各项信息，并递归查找其依赖的资源的信息，然后我们可以在这个过程中实现各种性能优化算法来“智能”加载资源。</p>
+<p>根据业务场景的不同，加载框架可以在浏览器中用JS实现，也可以是后端模板引擎中用服务端语言实现，甚至二者的组合，不一而足。</p>
+<p><img src="https://show8.github.io/blogimage/G15.png" alt="图15"></p>
+<p><code>有关加载框架的具体实现我曾写过很多文章介绍，可以扩展阅读：</code></p>
+<ul>
+<li><a href="https://github.com/fouber/blog/issues/3" target="_blank" rel="external">前端工程与性能优化</a></li>
+<li><a href="https://github.com/fouber/blog/issues/4" target="_blank" rel="external">前端工程与模块化框架</a></li>
+</ul>
+<p>这种设计很快被验证具有足够的灵活性，能够完美支撑不同团队不同技术规范下的性能优化需求，前面提到的按需加载、延迟加载、预加载、请求合并、文件指纹、CDN部署、Bigpipe、Quickling、BigRender、首屏CSS内嵌、HTTP 2.0服务端推送等等性能优化手段都可以很容易的在这种架构上实现，甚至可以根据性能日志自动进行优化（Facebook已实现）。</p>
+<p>因为有了资源表，我们可以很方便的控制资源加载，通过各种手段在运行时计算页面的资源使用情况，从而获得最佳加载性能。无论是前端渲染的单页面应用，还是后端渲染的多页面应用，这种方法都同样适用。</p>
+<p>此外，它还很巧妙的约束了构建工具的职责——只生成资源表。资源表是非常通用的数据结构，无论什么业务场景，其业务代码最终都可以被扫描为相同结构的表数据，并标记资源间的依赖关系，有了表之后我们只需根据不同的业务场景定制不同的资源加载框架就行了，从此彻底告别一个团队维护一套工具的时代！！！</p>
+<p><img src="https://show8.github.io/blogimage/G16.png" alt="图16"></p>
+<p><code>恩，如你所见，虽然彻底告别了一个团队一套工具的时代，但似乎又进入了一个团队一套框架的时代。其实还是有差别的，因为框架具有很大的灵活性，而且不那么黑盒，采用框架实现资源管理相比构建更容易调试、定位和升级变更。</code></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><hr>
+<p>回顾一下前面提到过的前端工程三个阶段：</p>
+<ul>
+<li>第一阶段：库/框架选型</li>
+<li>第二阶段：简单构建优化</li>
+<li>第三阶段：JS/CSS模块化开发</li>
+</ul>
+<p>现在补充上第四阶段：</p>
+<ul>
+<li>第四阶段：组件化开发与资源管理</li>
+</ul>
+<p>由于先天缺陷，<code>前端相比其他软件开发，在基础架构上更加迫切的需要组件化开发和资源管理，</code>而解决资源管理的方法其实一点也不复杂：<br><code>一个通用的资源表生成工具 + 基于表的资源加载框架</code></p>
+<p>近几年来各种你听到过的各种资源加载优化策略大部分都可以在这样一套基础上实现，而这种优化对于业务来说是完全透明的，不需要重构的性能优化——这不正是我们一直所期盼的吗？正如魏小亮博士所说：我们可以把优秀的人集中起来去优化加载。</p>
+<p>如何选型技术、如何定制规范、如何分治系统、如何优化性能、如何加载资源，当你从切图开始转变为思考这些问题的时候，我想说：</p>
+<p>你好，工程师！</p>
+<p>前端工程其实是一个很大的话题，开发仅是其中的一部分。</p>
+<p>转自：<a href="https://github.com/fouber/blog/blob/master/201508/01.md#" target="_blank" rel="external">https://github.com/fouber/blog/blob/master/201508/01.md#</a></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃糖果</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/07/21/Front-end engineering/">前端工程</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Rieko 的个人博客">Rieko</a></p>
+        <p><span>发布时间:</span>2017年07月21日 - 17时48分</p>
+        <p><span>最后更新:</span>2017年07月21日 - 21时38分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/21/Front-end engineering/" title="前端工程">http://showcc.github.io/2017/07/21/Front-end engineering/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://showcc.github.io/2017/07/21/Front-end engineering/　　作者: Rieko" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>友情提示:</span> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/07/13/With the notes/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">随手记（问题总结）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前端工程——基础篇"><span class="toc-number">1.</span> <span class="toc-text">前端工程——基础篇</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端，是一种GUI软件"><span class="toc-number">2.</span> <span class="toc-text">前端，是一种GUI软件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#前端工程的三个阶段"><span class="toc-number">3.</span> <span class="toc-text">前端工程的三个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#第一阶段：库-框架选型"><span class="toc-number">3.0.1.</span> <span class="toc-text">第一阶段：库/框架选型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第二阶段：简单构建优化"><span class="toc-number">3.0.2.</span> <span class="toc-text">第二阶段：简单构建优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第三阶段：JS-CSS模块化开发"><span class="toc-number">3.0.3.</span> <span class="toc-text">第三阶段：JS/CSS模块化开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第四阶段"><span class="toc-number">3.0.4.</span> <span class="toc-text">第四阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#没有银弹"><span class="toc-number">3.0.4.1.</span> <span class="toc-text">没有银弹</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第一件事：组件化开发"><span class="toc-number">3.0.4.2.</span> <span class="toc-text">第一件事：组件化开发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#第二件事：“智能”静态资源管理"><span class="toc-number">3.0.4.3.</span> <span class="toc-text">第二件事：“智能”静态资源管理</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+
+    
+        <div id="lv-container" data-id="city" data-uid="MTAyMC8yODY5MS81MjYy" style="width:90%;margin:5% auto 0 auto;background: #fff;padding: 0 12px;border-radius: 5px;">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/07/13/With the notes/" title="下一篇: 随手记（问题总结）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/21/Front-end engineering/">前端工程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/With the notes/">随手记（问题总结）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/Graduation season/">毕业季</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/Change the computer update the hexo blog/">使用hexo，换了电脑怎么更新博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Hexo-spfk-LiveRe/">Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/Mother's Day/">燕诗示刘叟</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/10/Life emotion/">生活</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Rieko
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 3;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
