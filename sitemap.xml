@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://showcc.github.io/photos/index.html</loc>
+    
+    <lastmod>2017-09-23T11:33:03.526Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://showcc.github.io/photos/data.json</loc>
+    
+    <lastmod>2017-09-23T10:47:50.617Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://showcc.github.io/2017/09/23/I%20and%20the%20temple%20of%20earth/</loc>
     
     <lastmod>2017-09-23T10:14:13.702Z</lastmod>
