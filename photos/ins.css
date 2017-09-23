@@ -59,6 +59,7 @@
 	width: 25%;
 	position: relative;
 	padding-bottom: 25%;
+	min-width: auto!important;
 }
 .instagram .album li:before{
 	display: none;
@@ -67,6 +68,7 @@
 	position: absolute;
 	width: 98%;
 	height: 93%;
+	margin: 0;
 	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
 	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
 	box-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 1px 0 1px rgba(255,255,255,0.1);
@@ -224,4 +226,8 @@
 	.album-font{
 	font-size: 14px;
 	}
+}
+
+.img-box-ul {
+	border-bottom: none!important;
 }
