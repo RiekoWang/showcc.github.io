@@ -78,7 +78,7 @@
 	height: 100%;
     position: relative;
     object-fit: cover;
-    z-index: 2;
+    z-index: 1;
 }
 .instagram .album div.img-box .img-bg{
 	position: absolute;
