@@ -8,12 +8,6 @@ var render = function(page, data){
 	$(".img-box-ul").append(img);
 	$(".img-box-ul").lazyload();
 	$("a[rel=example_group]").fancybox();
-
-
-
 };
 
-$(function(){
-
-})
 	
