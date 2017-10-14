@@ -56,18 +56,16 @@
 	padding: 0 5px;
 	margin-bottom: -10px;
 	height: 0;
-	width: 20%;
+	width: 25%;
 	position: relative;
-	padding-bottom: 20%;
+	padding-bottom: 25%;
 	min-width: auto!important;
 }
 .instagram .album li:before{
 	display: none;
 }
 .instagram .album div.img-box{
-	font-size: 16px;
 	position: absolute;
-	text-align: center;
 	width: 98%;
 	height: 93%;
 	margin: 0;
@@ -208,29 +206,16 @@
     transform: skew(-15deg) rotate(-5deg);
     left: 15px;
 }
-.img-box-ul {
-	border-bottom: none!important;
-}
-
-.img-box-ul .img-box2 {
-	margin-left: 5%!important;
-}
 
 @media screen and (max-width:600px) {
 	.instagram .thumb {
 		width: 50%;
 		padding-bottom: 30%;
 	}
-	.img-box-ul .img-box2 {
-		margin-left: 9%!important;
-	}
-	.img-box-ul .img-box1 {
-		margin-left: 1%!important;
-	}
 	.instagram .album li {
-		width: 45%;
+		width: 50%;
 		position: relative;
-		padding-bottom: 45%;
+		padding-bottom: 50%;
 		text-align: center;
 	}
 	.instagram .album div.img-box{
@@ -239,7 +224,10 @@
 		height: 92%;
 	}
 	.album-font{
-		font-size: 14px;
+	font-size: 14px;
 	}
 }
 
+.img-box-ul {
+	border-bottom: none!important;
+}

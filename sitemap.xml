@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://showcc.github.io/photos/mylove/index.html</loc>
+    
+    <lastmod>2017-10-14T17:44:02.344Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://showcc.github.io/photos/me/data_me.json</loc>
+    
+    <lastmod>2017-10-14T17:42:28.832Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://showcc.github.io/photos/me/index.html</loc>
+    
+    <lastmod>2017-10-14T17:31:43.157Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://showcc.github.io/photos/index.html</loc>
     
-    <lastmod>2017-09-24T04:01:01.665Z</lastmod>
+    <lastmod>2017-10-14T16:25:14.161Z</lastmod>
     
   </url>
   
@@ -16,7 +37,7 @@
   </url>
   
   <url>
-    <loc>http://showcc.github.io/photos/data.json</loc>
+    <loc>http://showcc.github.io/photos/mylove/data.json</loc>
     
     <lastmod>2017-09-24T03:31:50.870Z</lastmod>
     
