@@ -217,6 +217,9 @@
 }
 
 @media screen and (max-width:600px) {
+	.instagram {
+		margin-top: 5%;
+	}
 	.instagram .thumb {
 		width: 50%;
 		padding-bottom: 30%;

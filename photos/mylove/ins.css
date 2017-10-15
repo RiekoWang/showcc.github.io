@@ -206,7 +206,10 @@
     transform: skew(-15deg) rotate(-5deg);
     left: 15px;
 }
-
+.article-entry .Wlz a::before {
+    padding-right: 0px;
+    content: ""!important;
+}
 @media screen and (max-width:600px) {
 	.instagram .thumb {
 		width: 50%;
@@ -214,6 +217,7 @@
 	}
 	.instagram .album li {
 		width: 50%;
+		margin-top: 6%;
 		position: relative;
 		padding-bottom: 50%;
 		text-align: center;
