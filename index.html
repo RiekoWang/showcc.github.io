@@ -108,11 +108,13 @@
                     <nav class="header-menu">
                         <ul>
                         
-                            <li><a href="/">主页</a></li>
+                            <li><a href="/">博客主页</a></li>
                         
                             <li><a href="/tags/随笔">随笔</a></li>
                         
                             <li><a href="/photos">相册</a></li>
+                        
+                            <li><a href="https://home.show08.com">个人主页</a></li>
                         
                             <li><a href="http://www.show08.com">个人简历</a></li>
                         
@@ -136,7 +138,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/2017-06-17/" style="font-size: 10px;">2017.06.17</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/三个阶段/" style="font-size: 10px;">三个阶段</a> <a href="/tags/前端工程/" style="font-size: 10px;">前端工程</a> <a href="/tags/抒情散文/" style="font-size: 10px;">抒情散文</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/毕业/" style="font-size: 10px;">毕业</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a> <a href="/tags/随手记/" style="font-size: 10px;">随手记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
+                        <a href="/tags/2017-06-17/" style="font-size: 10px;">2017.06.17</a> <a href="/tags/Bower/" style="font-size: 10px;">Bower</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/三个阶段/" style="font-size: 10px;">三个阶段</a> <a href="/tags/前端工程/" style="font-size: 10px;">前端工程</a> <a href="/tags/抒情散文/" style="font-size: 10px;">抒情散文</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/毕业/" style="font-size: 10px;">毕业</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/管理工具/" style="font-size: 10px;">管理工具</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a> <a href="/tags/随手记/" style="font-size: 10px;">随手记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
                     </div>
                 </section>
                 
@@ -176,11 +178,13 @@
             <nav class="header-menu">
                 <ul>
                 
-                    <li><a href="/">主页</a></li>
+                    <li><a href="/">博客主页</a></li>
                 
                     <li><a href="/tags/随笔">随笔</a></li>
                 
                     <li><a href="/photos">相册</a></li>
+                
+                    <li><a href="https://home.show08.com">个人主页</a></li>
                 
                     <li><a href="http://www.show08.com">个人简历</a></li>
                 
@@ -204,6 +208,146 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/11/17/JSONP/" class="article-date">
+      <time datetime="2017-11-16T16:23:30.318Z" itemprop="datePublished">2017-11-17</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/17/JSONP/">JSONP是什么</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <hr>
+<h3 id="一、JSONP的诞生"><a href="#一、JSONP的诞生" class="headerlink" title="一、JSONP的诞生"></a>一、JSONP的诞生</h3><ul>
+<li>首先，因为ajax无法跨域，然后开发者就有所思考</li>
+<li>其次，开发者发现，<code>&lt;script&gt;</code>标签的src属性是可以跨域的把跨域服务器写成 调用本地的函数 ，回调数据回来不就好了？</li>
+<li>json刚好被js支持（object）</li>
+<li>调用跨域服务器上动态生成的js格式文件（不管是什么类型的地址，最终生成的返回值都是一段js代码）</li>
+<li>这种获取远程数据的方式看起来非常像ajax，但其实并不一样便于客户端使用数据，逐渐形成了一种非正式传输协议，人们把它称作JSONP。</li>
+<li>传递一个callback参数给跨域服务端，然后跨域服务端返回数据时会将这个callback参数作为函数名来包裹住json数据即可。</li>
+</ul>
+<p><img src="http://ow4d8yam8.bkt.clouddn.com/234141.jpg" alt="图1"></p>
+<hr>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/11/17/JSONP/#more">展开全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Bower" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/11/16/Bower/" class="article-date">
+      <time datetime="2017-11-16T15:57:03.800Z" itemprop="datePublished">2017-11-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/16/Bower/">Bower使用指南</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <hr>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bower是一个包管理工具。包的内容没有限制，比如：js库，框架，图片/字体资源等等或者它们的组合都可以，只要是你需要的就行，你也可以打包一些内容通过在bower上登记注册公开对外发布(当然Bower也支持提建私有包库)。<br><img src="http://ow4d8yam8.bkt.clouddn.com/355270-106.jpg" alt="图1"></p>
+<hr>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bower/">Bower</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/管理工具/">管理工具</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/11/16/Bower/#more">展开全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
   
     <article id="post-I and the temple of earth" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -445,135 +589,6 @@
       
         <p class="article-more-link">
           <a  href="/2017/07/21/Front-end engineering/#more">展开全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-With the notes" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/07/13/With the notes/" class="article-date">
-      <time datetime="2017-07-13T01:38:46.537Z" itemprop="datePublished">2017-07-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/13/With the notes/">随手记（问题总结）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="总结下开发时候随手记的一些东西，以后方便查找"><a href="#总结下开发时候随手记的一些东西，以后方便查找" class="headerlink" title="总结下开发时候随手记的一些东西，以后方便查找"></a>总结下开发时候随手记的一些东西，以后方便查找</h2><hr>
-<p><img src="https://show8.github.io/blogimage/suibi.jpg" alt="图片1"><br>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/问题总结/">问题总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随手记/">随手记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/07/13/With the notes/#more">展开全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Graduation season" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/06/25/Graduation season/" class="article-date">
-      <time datetime="2017-06-25T08:37:59.058Z" itemprop="datePublished">2017-06-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/25/Graduation season/">毕业季</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>时光匆匆，当我伸手去拦时，它却如微风般悄悄地从指边溜掉了。<br>我的大学生活就如这流水般缓缓而又匆匆地流淌着到了她的尽头，留给我的，是无尽的感慨收获和即将入海的宽广无限。<br><img src="https://show8.github.io/blogimage/by1.jpg" alt="图1"><br>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2017-06-17/">2017.06.17</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/毕业/">毕业</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/06/25/Graduation season/#more">展开全文 >></a>
         </p>
       
       <div class="clearfix"></div>

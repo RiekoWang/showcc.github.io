@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://showcc.github.io/2017/11/17/JSONP/</loc>
+    
+    <lastmod>2017-11-16T16:45:17.094Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://showcc.github.io/2017/11/16/Bower/</loc>
+    
+    <lastmod>2017-11-16T16:25:13.446Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://showcc.github.io/2017/07/13/With%20the%20notes/</loc>
+    
+    <lastmod>2017-11-16T15:52:00.082Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://showcc.github.io/photos/me/data_me.json</loc>
     
     <lastmod>2017-10-15T09:27:32.887Z</lastmod>
@@ -54,13 +75,6 @@
     <loc>http://showcc.github.io/2017/07/21/Front-end%20engineering/</loc>
     
     <lastmod>2017-09-23T10:10:07.380Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://showcc.github.io/2017/07/13/With%20the%20notes/</loc>
-    
-    <lastmod>2017-09-22T13:47:10.485Z</lastmod>
     
   </url>
   
