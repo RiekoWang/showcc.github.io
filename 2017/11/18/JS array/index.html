@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js数组操作 | 王立战的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、数组的方法1、数组的创建123var arrayObj = new Array();　//创建一个数组var arrayObj = new Array([size]);　//创建一个数组并指定长度，注意不是上限，是长度var arrayObj = new Array([element0[, element1[, ...[, elementN]]]]);　//创建一个数组并赋值 要说明的是，虽">
+<meta name="keywords" content="js,数组">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js数组操作">
+<meta property="og:url" content="http://showcc.github.io/2017/11/18/JS array/index.html">
+<meta property="og:site_name" content="王立战的博客">
+<meta property="og:description" content="一、数组的方法1、数组的创建123var arrayObj = new Array();　//创建一个数组var arrayObj = new Array([size]);　//创建一个数组并指定长度，注意不是上限，是长度var arrayObj = new Array([element0[, element1[, ...[, elementN]]]]);　//创建一个数组并赋值 要说明的是，虽">
+<meta property="og:image" content="http://ow4d8yam8.bkt.clouddn.com/77872.jpg">
+<meta property="og:updated_time" content="2017-11-18T06:30:42.430Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js数组操作">
+<meta name="twitter:description" content="一、数组的方法1、数组的创建123var arrayObj = new Array();　//创建一个数组var arrayObj = new Array([size]);　//创建一个数组并指定长度，注意不是上限，是长度var arrayObj = new Array([element0[, element1[, ...[, elementN]]]]);　//创建一个数组并赋值 要说明的是，虽">
+<meta name="twitter:image" content="http://ow4d8yam8.bkt.clouddn.com/77872.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="王立战的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Rieko</a></h1>
+           <h1 style="margin-top:px;font-size:14px;"> <a href="javascript:;" >--路漫漫其修远兮--</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客主页</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/photos">相册</a></li>
+                        
+                            <li><a href="https://home.show08.com">个人主页</a></li>
+                        
+                            <li><a href="http://www.show08.com">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/2017-06-17/" style="font-size: 10px;">2017.06.17</a> <a href="/tags/Bower/" style="font-size: 10px;">Bower</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/三个阶段/" style="font-size: 10px;">三个阶段</a> <a href="/tags/前端工程/" style="font-size: 10px;">前端工程</a> <a href="/tags/抒情散文/" style="font-size: 10px;">抒情散文</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/毕业/" style="font-size: 10px;">毕业</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/管理工具/" style="font-size: 10px;">管理工具</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a> <a href="/tags/随手记/" style="font-size: 10px;">随手记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">我是一个很哇塞的小伙儿！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Rieko</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Rieko</a></h1>
+              <h1  class="header-author js-header-author" style="line-height:15px;margin-bottom:15px; font-size:14px;"> <a href="javascript:;" style="color:;">--路漫漫其修远兮--</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客主页</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/photos">相册</a></li>
+                
+                    <li><a href="https://home.show08.com">个人主页</a></li>
+                
+                    <li><a href="http://www.show08.com">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-JS array" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/11/18/JS array/" class="article-date">
+      <time datetime="2017-11-18T06:08:58.687Z" itemprop="datePublished">2017-11-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js数组操作
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数组/">数组</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h1 id="一、数组的方法"><a href="#一、数组的方法" class="headerlink" title="一、数组的方法"></a>一、数组的方法</h1><h3 id="1、数组的创建"><a href="#1、数组的创建" class="headerlink" title="1、数组的创建"></a>1、数组的创建</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arrayObj = <span class="keyword">new</span> <span class="built_in">Array</span>();　<span class="comment">//创建一个数组</span></div><div class="line"><span class="keyword">var</span> arrayObj = <span class="keyword">new</span> <span class="built_in">Array</span>([size]);　<span class="comment">//创建一个数组并指定长度，注意不是上限，是长度</span></div><div class="line"><span class="keyword">var</span> arrayObj = <span class="keyword">new</span> <span class="built_in">Array</span>([element0[, element1[, ...[, elementN]]]]);　<span class="comment">//创建一个数组并赋值</span></div></pre></td></tr></table></figure>
+<p>要说明的是，虽然第二种方法创建数组指定了长度，但实际上所有情况下数组都是变长的，也就是说即使指定了长度为5，仍然可以将元素存储在规定长度以外的，注意：这时长度会随之改变。</p>
+<p><img src="http://ow4d8yam8.bkt.clouddn.com/77872.jpg" alt="图1"></p>
+<hr>
+<a id="more"></a>
+<h3 id="2、数组的元素的访问"><a href="#2、数组的元素的访问" class="headerlink" title="2、数组的元素的访问"></a>2、数组的元素的访问</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> testGetArrValue=arrayObj[<span class="number">1</span>]; <span class="comment">//获取数组的元素值</span></div><div class="line">arrayObj[<span class="number">1</span>]= <span class="string">"这是新值"</span>; <span class="comment">//给数组元素赋予新的值</span></div></pre></td></tr></table></figure>
+<h3 id="3、数组元素的添加"><a href="#3、数组元素的添加" class="headerlink" title="3、数组元素的添加"></a>3、数组元素的添加</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">arrayObj. push([item1 [item2 [. . . [itemN ]]]]);<span class="comment">// 将一个或多个新元素添加到数组结尾，并返回数组新长度</span></div><div class="line">arrayObj.unshift([item1 [item2 [. . . [itemN ]]]]);<span class="comment">// 将一个或多个新元素添加到数组开始，数组中的元素自动后移，返回数组新长度</span></div><div class="line">arrayObj.splice(insertPos,<span class="number">0</span>,[item1[, item2[, . . . [,itemN]]]]);<span class="comment">//将一个或多个新元素插入到数组的指定位置，插入位置的元素自动后移，返回""。</span></div></pre></td></tr></table></figure>
+<h3 id="4、数组元素的删除"><a href="#4、数组元素的删除" class="headerlink" title="4、数组元素的删除"></a>4、数组元素的删除</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">arrayObj.pop(); <span class="comment">//移除最后一个元素并返回该元素值</span></div><div class="line">arrayObj.shift(); <span class="comment">//移除最前一个元素并返回该元素值，数组中元素自动前移</span></div><div class="line">arrayObj.splice(deletePos,deleteCount); <span class="comment">//删除从指定位置deletePos开始的指定数量deleteCount的元素，数组形式返回所移除的元素</span></div></pre></td></tr></table></figure>
+<h3 id="5、数组的截取和合并"><a href="#5、数组的截取和合并" class="headerlink" title="5、数组的截取和合并"></a>5、数组的截取和合并</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">arrayObj.slice(start, [end]); <span class="comment">//以数组的形式返回数组的一部分，注意不包括 end 对应的元素，如果省略 end 将复制 start 之后的所有元素</span></div><div class="line">arrayObj.concat([item1[, item2[, . . . [,itemN]]]]); <span class="comment">//将多个数组（也可以是字符串，或者是数组和字符串的混合）连接为一个数组，返回连接好的新的数组</span></div></pre></td></tr></table></figure>
+<h3 id="6、数组的拷贝"><a href="#6、数组的拷贝" class="headerlink" title="6、数组的拷贝"></a>6、数组的拷贝</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">arrayObj.slice(<span class="number">0</span>); <span class="comment">//返回数组的拷贝数组，注意是一个新的数组，不是指向</span></div><div class="line">arrayObj.concat(); <span class="comment">//返回数组的拷贝数组，注意是一个新的数组，不是指向</span></div></pre></td></tr></table></figure>
+<h3 id="7、数组元素的排序"><a href="#7、数组元素的排序" class="headerlink" title="7、数组元素的排序"></a>7、数组元素的排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">arrayObj.reverse(); <span class="comment">//反转元素（最前的排到最后、最后的排到最前），返回数组地址</span></div><div class="line">arrayObj.sort(); <span class="comment">//对数组元素排序，返回数组地址</span></div></pre></td></tr></table></figure>
+<h3 id="8、数组元素的字符串化"><a href="#8、数组元素的字符串化" class="headerlink" title="8、数组元素的字符串化"></a>8、数组元素的字符串化</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">arrayObj.join(separator); <span class="comment">//返回字符串，这个字符串将数组的每一个元素值连接在一起，中间用 separator 隔开。</span></div><div class="line">toLocaleString 、toString 、valueOf：可以看作是join的特殊用法，不常用</div></pre></td></tr></table></figure>
+<h1 id="二、数组对象的3个属性"><a href="#二、数组对象的3个属性" class="headerlink" title="二、数组对象的3个属性"></a>二、数组对象的3个属性</h1><h3 id="1、length-属性"><a href="#1、length-属性" class="headerlink" title="1、length 属性"></a>1、length 属性</h3><p>Length属性表示数组的长度，即其中元素的个数。因为数组的索引总是由0开始，所以一个数组的上下限分别是：0和length-1。和其他大多数语言不同的是，JavaScript数组的length属性是可变的，这一点需要特别注意。当length属性被设置得更大时，整个数组的状态事实上不会发生变化，仅仅是length属性变大；当length属性被设置得比原来小时，则原先数组中索引大于或等于length的元素的值全部被丢失。下面是演示改变length属性的例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">12</span>,<span class="number">23</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">25</span>,<span class="number">98</span>,<span class="number">76</span>,<span class="number">54</span>,<span class="number">56</span>,<span class="number">76</span>];</div><div class="line"> <span class="comment">//定义了一个包含10个数字的数组</span></div><div class="line">alert(arr.length); <span class="comment">//显示数组的长度10</span></div><div class="line"> arr.length=<span class="number">12</span>; <span class="comment">//增大数组的长度</span></div><div class="line">alert(arr.length); <span class="comment">//显示数组的长度已经变为12</span></div><div class="line"> alert(arr[<span class="number">8</span>]); <span class="comment">//显示第9个元素的值，为56</span></div><div class="line"> arr.length=<span class="number">5</span>; <span class="comment">//将数组的长度减少到5，索引等于或超过5的元素被丢弃</span></div><div class="line">alert(arr[<span class="number">8</span>]); <span class="comment">//显示第9个元素已经变为"undefined"</span></div><div class="line"> arr.length=<span class="number">10</span>; <span class="comment">//将数组长度恢复为10</span></div><div class="line"> alert(arr[<span class="number">8</span>]); <span class="comment">//虽然长度被恢复为10，但第9个元素却无法收回，显示"undefined"</span></div></pre></td></tr></table></figure></p>
+<p> 由上面的代码我们可以清楚的看到length属性的性质。但length对象不仅可以显式的设置，它也有可能被隐式修改。JavaScript中可以使用一个未声明过的变量，同样，也可以使用一个未定义的数组元素（指索引超过或等于length的元素），这时，length属性的值将被设置为所使用元素索引的值加1。例如下面的代码：<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">12</span>,<span class="number">23</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">25</span>,<span class="number">98</span>,<span class="number">76</span>,<span class="number">54</span>,<span class="number">56</span>,<span class="number">76</span>];</div><div class="line">alert(arr.length);</div><div class="line">arr[<span class="number">15</span>]=<span class="number">34</span>;</div><div class="line">alert(arr.length);</div></pre></td></tr></table></figure></p>
+<p> 代码中同样是先定义了一个包含10个数字的数组，通过alert语句可以看出其长度为10。随后使用了索引为15的元素，将其赋值为15，即 arr[15]=34，这时再用alert语句输出数组的长度，得到的是16。无论如何，对于习惯于强类型编程的开发人员来说，这是一个很令人惊讶的特性。事实上，使用new Array()形式创建的数组，其初始长度就是为0，正是对其中未定义元素的操作，才使数组的长度发生变化。</p>
+<p>由上面的介绍可以看到，length属性是如此的神奇，利用它可以方便的增加或者减少数组的容量。因此对length属性的深入了解，有助于在开发过程中灵活运用。</p>
+<h3 id="2、prototype-属性"><a href="#2、prototype-属性" class="headerlink" title="2、prototype 属性"></a>2、prototype 属性</h3><p>返回对象类型原型的引用。prototype 属性是 object 共有的。<br>objectName.prototype<br>objectName 参数是object对象的名称。<br>说明：用 prototype 属性提供对象的类的一组基本功能。 对象的新实例“继承”赋予该对象原型的操作。<br>对于数组对象，以以下例子说明prototype 属性的用途。<br>给数组对象添加返回数组中最大元素值的方法。要完成这一点，声明一个函数，将它加入 Array.prototype， 并使用它。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">array_max</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"> </span>&#123;</div><div class="line">   <span class="keyword">var</span> i,</div><div class="line">   max = <span class="keyword">this</span>[<span class="number">0</span>];</div><div class="line">   <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="keyword">this</span>.length; i++)</div><div class="line">   &#123;</div><div class="line">       <span class="keyword">if</span> (max &lt; <span class="keyword">this</span>[i])</div><div class="line">       max = <span class="keyword">this</span>[i];</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">return</span> max;</div><div class="line"> &#125;</div><div class="line"> <span class="built_in">Array</span>.prototype.max = array_max;</div><div class="line"> <span class="keyword">var</span> x = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>);</div><div class="line"> <span class="keyword">var</span> y = x.max();</div></pre></td></tr></table></figure></p>
+<p> 该代码执行后，y 保存数组 x 中的最大值，或说 6。</p>
+<h3 id="3、constructor-属性"><a href="#3、constructor-属性" class="headerlink" title="3、constructor 属性"></a>3、constructor 属性</h3><p>表示创建对象的函数。<br>object.constructor //object是对象或函数的名称。<br>说明：constructor 属性是所有具有 prototype 的对象的成员。它们包括除 Global 和 Math 对象以外的所有 JScript 固有对象。constructor 属性保存了对构造特定对象实例的函数的引用。<br>例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"Hi"</span>);</div><div class="line"><span class="keyword">if</span> (x.constructor == <span class="built_in">String</span>) <span class="comment">// 进行处理（条件为真）。</span></div></pre></td></tr></table></figure></p>
+<p> 或<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyFunc</span> </span>&#123;</div><div class="line">   <span class="comment">// 函数体。</span></div><div class="line">&#125;</div><div class="line">y = <span class="keyword">new</span> MyFunc;</div><div class="line"> <span class="keyword">if</span> (y.constructor == MyFunc) <span class="comment">// 进行处理（条件为真）。</span></div></pre></td></tr></table></figure></p>
+<p> 对于数组来说：<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">y = <span class="keyword">new</span> <span class="built_in">Array</span>();</div></pre></td></tr></table></figure></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃糖果</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/11/18/JS array/">js数组操作</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Rieko 的个人博客">Rieko</a></p>
+        <p><span>发布时间:</span>2017年11月18日 - 14时08分</p>
+        <p><span>最后更新:</span>2017年11月18日 - 14时30分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/11/18/JS array/" title="js数组操作">http://showcc.github.io/2017/11/18/JS array/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://showcc.github.io/2017/11/18/JS array/　　作者: Rieko" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>友情提示:</span> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/11/18/H5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          H5项目常见问题汇总及解决方案
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/17/JSONP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JSONP是什么</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、数组的方法"><span class="toc-number">1.</span> <span class="toc-text">一、数组的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、数组的创建"><span class="toc-number">1.0.1.</span> <span class="toc-text">1、数组的创建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、数组的元素的访问"><span class="toc-number">1.0.2.</span> <span class="toc-text">2、数组的元素的访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、数组元素的添加"><span class="toc-number">1.0.3.</span> <span class="toc-text">3、数组元素的添加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、数组元素的删除"><span class="toc-number">1.0.4.</span> <span class="toc-text">4、数组元素的删除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、数组的截取和合并"><span class="toc-number">1.0.5.</span> <span class="toc-text">5、数组的截取和合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6、数组的拷贝"><span class="toc-number">1.0.6.</span> <span class="toc-text">6、数组的拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7、数组元素的排序"><span class="toc-number">1.0.7.</span> <span class="toc-text">7、数组元素的排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8、数组元素的字符串化"><span class="toc-number">1.0.8.</span> <span class="toc-text">8、数组元素的字符串化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、数组对象的3个属性"><span class="toc-number">2.</span> <span class="toc-text">二、数组对象的3个属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、length-属性"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、length 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、prototype-属性"><span class="toc-number">2.0.2.</span> <span class="toc-text">2、prototype 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、constructor-属性"><span class="toc-number">2.0.3.</span> <span class="toc-text">3、constructor 属性</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+
+    
+        <div id="lv-container" data-id="city" data-uid="MTAyMC8yODY5MS81MjYy" style="width:90%;margin:5% auto 0 auto;background: #fff;padding: 0 12px;border-radius: 5px;">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/11/18/H5/" title="上一篇: H5项目常见问题汇总及解决方案">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/11/17/JSONP/" title="下一篇: JSONP是什么">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/H5/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/JS array/">js数组操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/17/JSONP/">JSONP是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/16/Bower/">Bower使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/I and the temple of earth/">我与地坛--史铁生</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/11/ajax/">$.ajax()方法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/10/cookie and session/">cookie 和session 的区别详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/21/Front-end engineering/">前端工程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/With the notes/">随手记（问题总结）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/Graduation season/">毕业季</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/Change the computer update the hexo blog/">使用hexo，换了电脑怎么更新博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Hexo-spfk-LiveRe/">Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/Mother's Day/">燕诗示刘叟</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/10/Life emotion/">生活</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Rieko
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 3;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
