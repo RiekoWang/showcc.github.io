@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>cookie 、sessionStorage 、localStorage之间的区别和使用 | 王立战的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="cookie&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cookie是浏览器提供的一种机制，它将document 对象的cookie属性提供给JavaScript。可以由JavaScript对其进行控制，而并不是JavaScript本身的性质。cookie是存于用户硬盘的一个文件，这个文件通常对应于一个域名，当浏览器再次访问这个域名时，便使这个cookie可用。因此，">
+<meta name="keywords" content="cookie,sessionStorage,localStorage">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cookie 、sessionStorage 、localStorage之间的区别和使用">
+<meta property="og:url" content="http://showcc.github.io/2017/11/18/sessionStorage&localStorage&cookie/index.html">
+<meta property="og:site_name" content="王立战的博客">
+<meta property="og:description" content="cookie&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cookie是浏览器提供的一种机制，它将document 对象的cookie属性提供给JavaScript。可以由JavaScript对其进行控制，而并不是JavaScript本身的性质。cookie是存于用户硬盘的一个文件，这个文件通常对应于一个域名，当浏览器再次访问这个域名时，便使这个cookie可用。因此，">
+<meta property="og:image" content="http://ow4d8yam8.bkt.clouddn.com/62511-106.jpg">
+<meta property="og:updated_time" content="2017-11-18T15:09:26.112Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cookie 、sessionStorage 、localStorage之间的区别和使用">
+<meta name="twitter:description" content="cookie&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;cookie是浏览器提供的一种机制，它将document 对象的cookie属性提供给JavaScript。可以由JavaScript对其进行控制，而并不是JavaScript本身的性质。cookie是存于用户硬盘的一个文件，这个文件通常对应于一个域名，当浏览器再次访问这个域名时，便使这个cookie可用。因此，">
+<meta name="twitter:image" content="http://ow4d8yam8.bkt.clouddn.com/62511-106.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="王立战的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Rieko</a></h1>
+           <h1 style="margin-top:px;font-size:14px;"> <a href="javascript:;" >--路漫漫其修远兮--</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客主页</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/photos">相册</a></li>
+                        
+                            <li><a href="https://home.show08.com">个人主页</a></li>
+                        
+                            <li><a href="http://www.show08.com">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/2017-06-17/" style="font-size: 10px;">2017.06.17</a> <a href="/tags/Bower/" style="font-size: 10px;">Bower</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/cookie/" style="font-size: 15px;">cookie</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/三个阶段/" style="font-size: 10px;">三个阶段</a> <a href="/tags/前端工程/" style="font-size: 10px;">前端工程</a> <a href="/tags/抒情散文/" style="font-size: 10px;">抒情散文</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/毕业/" style="font-size: 10px;">毕业</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/管理工具/" style="font-size: 10px;">管理工具</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a> <a href="/tags/随手记/" style="font-size: 10px;">随手记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">我是一个很哇塞的小伙儿！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Rieko</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Rieko</a></h1>
+              <h1  class="header-author js-header-author" style="line-height:15px;margin-bottom:15px; font-size:14px;"> <a href="javascript:;" style="color:;">--路漫漫其修远兮--</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客主页</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/photos">相册</a></li>
+                
+                    <li><a href="https://home.show08.com">个人主页</a></li>
+                
+                    <li><a href="http://www.show08.com">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-sessionStorage&amp;localStorage&amp;cookie" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/11/18/sessionStorage&localStorage&cookie/" class="article-date">
+      <time datetime="2017-11-18T11:01:43.242Z" itemprop="datePublished">2017-11-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      cookie 、sessionStorage 、localStorage之间的区别和使用
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/localStorage/">localStorage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sessionStorage/">sessionStorage</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h1 id="cookie"><a href="#cookie" class="headerlink" title="cookie"></a>cookie</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cookie是浏览器提供的一种机制，它将document 对象的cookie属性提供给JavaScript。可以由JavaScript对其进行控制，而并不是JavaScript本身的性质。cookie是存于用户硬盘的一个文件，这个文件通常对应于一个域名，当浏览器再次访问这个域名时，便使这个cookie可用。因此，cookie可以跨越一个域名下的多个网页，但不能跨越多个域名使用。<br>cookie是浏览器提供的一种机制，它将document 对象的cookie属性提供给JavaScript。可以由JavaScript对其进行控制，而并不是JavaScript本身的性质。cookie是存于用户硬盘的一个文件，这个文件通常对应于一个域名，当浏览器再次访问这个域名时，便使这个cookie可用。因此，cookie可以跨越一个域名下的多个网页，但不能跨越多个域名使用。 </p>
+<p>不同的浏览器对cookie的实现也不一样，但其性质是相同的。例如在Windows 2000以及Windows xp中，cookie文件存储于documents and settings\userName\cookie\文件夹下。通常的命名格式为：userName@domain.txt。<br><img src="http://ow4d8yam8.bkt.clouddn.com/62511-106.jpg" alt="图一"></p>
+<hr>
+<a id="more"></a>
+<p>cookie机制将信息存储于用户硬盘，因此可以作为全局变量，这是它最大的一个优点。它可以用于以下几种场合。 </p>
+<ol>
+<li>保存用户登录状态。例如将用户id存储于一个cookie内，这样当用户下次访问该页面时就不需要重新登录了，现在很多论坛和社区都提供这样的功能。 cookie还可以设置过期时间，当超过时间期限后，cookie就会自动消失。因此，系统往往可以提示用户保持登录状态的时间：常见选项有一个月、三个 月、一年等。 </li>
+<li>跟踪用户行为。例如一个天气预报网站，能够根据用户选择的地区显示当地的天气情况。如果每次都需要选择所在地是烦琐的，当利用了 cookie后就会显得很人性化了，系统能够记住上一次访问的地区，当下次再打开该页面时，它就会自动显示上次用户所在地区的天气情况。因为一切都是在后 台完成，所以这样的页面就像为某个用户所定制的一样，使用起来非常方便。 </li>
+<li>定制页面。如果网站提供了换肤或更换布局的功能，那么可以使用cookie来记录用户的选项，例如：背景色、分辨率等。当用户下次访问时，仍然可以保存上一次访问的界面风格。 </li>
+<li>创建购物车。正如在前面的例子中使用cookie来记录用户需要购买的商品一样，在结账的时候可以统一提交。例如淘宝网就使用cookie记录了用户曾经浏览过的商品，方便随时进行比较。 </li>
+</ol>
+<p>当然，上述应用仅仅是cookie能完成的部分应用，还有更多的功能需要全局变量。cookie的缺点主要集中于安全性和隐私保护。主要包括以下几种： </p>
+<ol>
+<li>cookie可能被禁用。当用户非常注重个人隐私保护时，他很可能禁用浏览器的cookie功能； </li>
+<li>cookie是与浏览器相关的。这意味着即使访问的是同一个页面，不同浏览器之间所保存的cookie也是不能互相访问的； </li>
+<li>cookie可能被删除。因为每个cookie都是硬盘上的一个文件，因此很有可能被用户删除； </li>
+<li>cookie安全性不够高。所有的cookie都是以纯文本的形式记录于文件中，因此如果要保存用户名密码等信息时，最好事先经过加密处理。</li>
+</ol>
+<h3 id="设置cookie"><a href="#设置cookie" class="headerlink" title="设置cookie"></a>设置cookie</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//每个cookie都是一个名/值对，可以把下面这样一个字符串赋值给document.cookie： </span></div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=828"</span>; </div><div class="line"><span class="comment">//如果要一次存储多个名/值对，可以使用分号加空格（; ）隔开，例如： </span></div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=828; userName=hulk"</span>;</div></pre></td></tr></table></figure>
+<p>在cookie 的名或值中不能使用分号（;）、逗号（,）、等号（=）以及空格。在cookie的名中做到这点很容易，但要保存的值是不确定的。如何来存储这些值呢？方 法是用escape()函数进行编码，它能将一些特殊符号使用十六进制表示，例如空格将会编码为“20%”，从而可以存储于cookie值中，而且使用此 种方案还可以避免中文乱码的出现,当使用escape()编码后，在取出值以后需要使用unescape()进行解码才能得到原来的cookie值。例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"str="</span>+<span class="built_in">escape</span>(<span class="string">"I love ajax"</span>); </div><div class="line"><span class="comment">//相当于： </span></div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"str=I%20love%20ajax"</span>;</div></pre></td></tr></table></figure></p>
+<p>尽管document.cookie看上去就像一个属性，可以赋不同的值。但它和一般的属性不一样，改变它的赋值并不意味着丢失原来的值，例如连续执行下面两条语句：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=828"</span>; </div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userName=hulk"</span>;</div></pre></td></tr></table></figure></p>
+<p>这时浏览器将维护两个cookie，分别是userId和userName，因此给document.cookie赋值更像执行类似这样的语句：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.addCookie(<span class="string">"userId=828"</span>); </div><div class="line"><span class="built_in">document</span>.addCookie(<span class="string">"userName=hulk"</span>);</div></pre></td></tr></table></figure></p>
+<p>事实上，浏览器就是按照这样的方式来设置cookie的，如果要改变一个cookie的值，只需重新赋值，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=929"</span>; </div><div class="line"><span class="comment">//这样就将名为userId的cookie值设置为了929。</span></div></pre></td></tr></table></figure></p>
+<h3 id="获取cookie的值"><a href="#获取cookie的值" class="headerlink" title="获取cookie的值"></a>获取cookie的值</h3><p>cookie的值可以由document.cookie直接获得：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> strCookie=<span class="built_in">document</span>.cookie; </div><div class="line"><span class="comment">//这将获得以分号隔开的多个名/值对所组成的字符串，这些名/值对包括了该域名下的所有cookie。</span></div></pre></td></tr></table></figure></p>
+<p>只能够一次获取所有的cookie值，而不能指定cookie名称来获得指定的值，这正是处理cookie值最麻 烦的一部分。用户必须自己分析这个字符串，来获取指定的cookie值，例如，要获取userId的值，可以这样实现：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;script language=<span class="string">"JavaScript"</span> type=<span class="string">"text/javascript"</span>&gt; </div><div class="line">&lt;!-- </div><div class="line"><span class="comment">//设置两个cookie </span></div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=828"</span>; </div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userName=hulk"</span>; </div><div class="line"><span class="comment">//获取cookie字符串 </span></div><div class="line"><span class="keyword">var</span> strCookie=<span class="built_in">document</span>.cookie; </div><div class="line"><span class="comment">//将多cookie切割为多个名/值对 </span></div><div class="line"><span class="keyword">var</span> arrCookie=strCookie.split(<span class="string">"; "</span>); </div><div class="line"><span class="keyword">var</span> userId; </div><div class="line"><span class="comment">//遍历cookie数组，处理每个cookie对 </span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arrCookie.length;i++)&#123; </div><div class="line"><span class="keyword">var</span> arr=arrCookie[i].split(<span class="string">"="</span>); </div><div class="line"><span class="comment">//找到名称为userId的cookie，并返回它的值 </span></div><div class="line"><span class="keyword">if</span>(<span class="string">"userId"</span>==arr[<span class="number">0</span>])&#123; </div><div class="line">userId=arr[<span class="number">1</span>]; </div><div class="line"><span class="keyword">break</span>; </div><div class="line">&#125; </div><div class="line">&#125; </div><div class="line">alert(userId); </div><div class="line"><span class="comment">//--&gt; </span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="给cookie设置终止日期"><a href="#给cookie设置终止日期" class="headerlink" title="给cookie设置终止日期"></a>给cookie设置终止日期</h3><p>到现在为止，所有的cookie都是单会话cookie，即浏览器关闭后这些cookie将会丢失，事实上这些cookie仅仅是存储在内存中，而没有建立相应的硬盘文件。<br>如：如果要将cookie设置为10天后过期，可以这样实现：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script language=<span class="string">"JavaScript"</span> type=<span class="string">"text/javascript"</span>&gt; </div><div class="line">&lt;!-- </div><div class="line"><span class="comment">//获取当前时间 </span></div><div class="line"><span class="keyword">var</span> oDate=<span class="keyword">new</span> <span class="built_in">Date</span>(); </div><div class="line">oDate.setDate(oDate.getDate()+<span class="number">10</span>);<span class="comment">//+10天</span></div><div class="line"><span class="comment">//将userId和userName两个cookie设置为10天后过期 </span></div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=828;userName=hulk;expires="</span>+oDate;</div><div class="line"><span class="comment">//--&gt; </span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="删除cookie"><a href="#删除cookie" class="headerlink" title="删除cookie"></a>删除cookie</h3><p>为了删除一个cookie，可以将其过期时间设定为一个过去的时间，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;script language=<span class="string">"JavaScript"</span> type=<span class="string">"text/javascript"</span>&gt; </div><div class="line">&lt;!-- </div><div class="line"><span class="comment">//获取当前时间 </span></div><div class="line"><span class="keyword">var</span> oDate=<span class="keyword">new</span> <span class="built_in">Date</span>(); </div><div class="line">oDate.setDate(oDate.getDate()<span class="number">-10</span>);<span class="comment">//-10天</span></div><div class="line"><span class="comment">//将userId和userName两个cookie设置为10天后过期 </span></div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=828;userName=hulk;expires="</span>+oDate;</div><div class="line"><span class="comment">//--&gt; </span></div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="指定可访问cookie的路径"><a href="#指定可访问cookie的路径" class="headerlink" title="指定可访问cookie的路径"></a>指定可访问cookie的路径</h3><p>默认情况下，如果在某个页面创建了一个cookie，那么该页面所在目录中的其他页面也可以访问该cookie。如果这个目录下还有子目录，则在子目录中也可以访问。例如在www.xxxx.com/html/a.html中所创建的cookie，可以被www.xxxx.com/html/b.html或www.xxx.com/ html/ some/c.html所访问，但不能被www.xxxx.com/d.html访问。<br>为了控制cookie可以访问的目录，需要使用path参数设置cookie，语法如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"name=value; path=cookieDir"</span>; </div><div class="line"><span class="comment">//其中cookieDir表示可访问cookie的目录。例如： </span></div><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=320; path=/shop"</span>; </div><div class="line"><span class="comment">//就表示当前cookie仅能在shop目录下使用。</span></div></pre></td></tr></table></figure></p>
+<p>如果要使cookie在整个网站下可用，可以将cookie_dir指定为根目录，例如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.cookie=<span class="string">"userId=320; path=/"</span>;</div></pre></td></tr></table></figure></p>
+<h3 id="指定可访问cookie的主机名"><a href="#指定可访问cookie的主机名" class="headerlink" title="指定可访问cookie的主机名"></a>指定可访问cookie的主机名</h3><p>和路径类似，主机名是指同一个域下的不同主机，例如：www.google.com和gmail.google.com就是两个不同的主机名。默认情况下，一个主机中创建的cookie在另一个主机下是不能被访问的，但可以通过domain参数来实现对其的控制，其语法格式为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">document.cookie=&quot;name=value; domain=cookieDomain&quot;; </div><div class="line">//以google为例，要实现跨主机访问，可以写为： </div><div class="line">document.cookie=&quot;name=value;domain=.google.com&quot;; </div><div class="line">//这样，所有google.com下的主机都可以访问该cookie。</div></pre></td></tr></table></figure></p>
+<p>综合示例：构造通用的cookie处理函数<br>cookie的处理过程比较复杂，并具有一定的相似性。因此可以定义几个函数来完成cookie的通用操作，从而实现代码的复用。下面列出了常用的cookie操作及其函数实现。 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">//1. 添加一个cookie：addCookie(name,value,expiresHours)该函数接收3个参数：cookie名称，cookie值，以及在多少小时后过期。这里约定expiresHours为0时不设定过期时间，即当浏览器关闭时cookie自动消失。</div><div class="line">function addCookie(name,value,expiresHours)&#123; </div><div class="line">	var cookieString=name+&quot;=&quot;+escape(value); </div><div class="line">	//判断是否设置过期时间 </div><div class="line">	if(expiresHours&gt;0)&#123; </div><div class="line">		var date=new Date(); </div><div class="line">		date.setTime(date.getTime+expiresHours*3600*1000); </div><div class="line">		cookieString=cookieString+&quot;; expires=&quot;+date.toGMTString(); </div><div class="line">	&#125; </div><div class="line">	document.cookie=cookieString; </div><div class="line">&#125; </div><div class="line">//2．获取指定名称的cookie值：getCookie(name) 该函数返回名称为name的cookie值，如果不存在则返回空</div><div class="line">function getCookie(name)&#123; </div><div class="line">	var strCookie=document.cookie; </div><div class="line">	var arrCookie=strCookie.split(&quot;; &quot;); </div><div class="line">	for(var i=0;i&lt;arrCookie.length;i++)&#123; </div><div class="line">		var arr=arrCookie[i].split(&quot;=&quot;); </div><div class="line">		if(arr[0]==name)return arr[1]; </div><div class="line">	&#125; </div><div class="line">	return &quot;&quot;; </div><div class="line">&#125; </div><div class="line">//3. 删除指定名称的cookie：deleteCookie(name)该函数可以删除指定名称的cookie</div><div class="line">function deleteCookie(name)&#123; </div><div class="line">	var date=new Date(); </div><div class="line">	date.setTime(date.getTime()-10000); </div><div class="line">	document.cookie=name+&quot;=v; expires=&quot;+date.toGMTString(); </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="sessionStorage和localStorage"><a href="#sessionStorage和localStorage" class="headerlink" title="sessionStorage和localStorage"></a>sessionStorage和localStorage</h1><hr>
+<p>html5中的Web Storage包括了两种存储方式：sessionStorage和localStorage。<br>sessionStorage用于本地存储一个会话（session）中的数据，这些数据只有在同一个会话中的页面才能访问并且当会话结束后数据也随之销毁。因此sessionStorage不是一种持久化的本地存储，仅仅是会话级别的存储。</p>
+<p>而localStorage用于持久化的本地存储，除非主动删除数据，否则数据是永远不会过期的。</p>
+<h3 id="html5-web-storage的浏览器支持情况"><a href="#html5-web-storage的浏览器支持情况" class="headerlink" title="html5 web storage的浏览器支持情况"></a>html5 web storage的浏览器支持情况</h3><p>浏览器的支持除了IE７及以下不支持外，其他标准浏览器都完全支持(ie及FF需在web服务器里运行)，值得一提的是IE总是办好事，例如IE7、IE6中的UserData其实就是javascript本地存储的解决方案。通过简单的代码封装可以统一到所有的浏览器都支持web storage。</p>
+<p>要判断浏览器是否支持localStorage可以使用下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.localStorage)&#123;     </div><div class="line">	alert(<span class="string">"浏览支持localStorage"</span>) </div><div class="line">&#125;<span class="keyword">else</span>&#123;    </div><div class="line">	alert(<span class="string">"浏览暂不支持localStorage"</span>) </div><div class="line">	&#125; </div><div class="line">	<span class="comment">//或者 </span></div><div class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">window</span>.localStorage == <span class="string">'undefined'</span>)&#123; 	</div><div class="line">	alert(<span class="string">"浏览暂不支持localStorage"</span>) </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="localStorage和sessionStorage操作"><a href="#localStorage和sessionStorage操作" class="headerlink" title="localStorage和sessionStorage操作"></a>localStorage和sessionStorage操作</h3><p>localStorage和sessionStorage都具有相同的操作方法，例如setItem、getItem和removeItem等</p>
+<h4 id="localStorage和sessionStorage的方法"><a href="#localStorage和sessionStorage的方法" class="headerlink" title="localStorage和sessionStorage的方法"></a>localStorage和sessionStorage的方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//1. setItem存储value</span></div><div class="line"></div><div class="line"><span class="comment">//用途：将value存储到key字段</span></div><div class="line"><span class="comment">//用法：.setItem( key, value)</span></div><div class="line"><span class="comment">//代码示例：</span></div><div class="line">	sessionStorage.setItem(<span class="string">"key"</span>, <span class="string">"value"</span>); 	localStorage.setItem(<span class="string">"site"</span>, <span class="string">"js8.in"</span>);</div><div class="line"></div><div class="line"><span class="comment">//2. getItem获取value</span></div><div class="line"><span class="comment">//用途：获取指定key本地存储的值</span></div><div class="line"><span class="comment">//用法：.getItem(key)</span></div><div class="line"><span class="comment">//代码示例：</span></div><div class="line">	<span class="keyword">var</span> value = sessionStorage.getItem(<span class="string">"key"</span>); 	<span class="keyword">var</span> site = localStorage.getItem(<span class="string">"site"</span>);</div><div class="line"></div><div class="line"><span class="comment">//3. removeItem删除key</span></div><div class="line"><span class="comment">//用途：删除指定key本地存储的值</span></div><div class="line"><span class="comment">//用法：.removeItem(key)</span></div><div class="line"><span class="comment">//代码示例：</span></div><div class="line">	sessionStorage.removeItem(<span class="string">"key"</span>); 	localStorage.removeItem(<span class="string">"site"</span>);</div><div class="line"></div><div class="line"><span class="comment">//4. clear清除所有的key/value</span></div><div class="line"><span class="comment">//用途：清除所有的key/value</span></div><div class="line"><span class="comment">//用法：.clear()</span></div><div class="line"><span class="comment">//代码示例：</span></div><div class="line">	sessionStorage.clear(); 	localStorage.clear();</div></pre></td></tr></table></figure>
+<h3 id="其他操作方法：点操作和"><a href="#其他操作方法：点操作和" class="headerlink" title="其他操作方法：点操作和[]"></a>其他操作方法：点操作和[]</h3><p>web Storage不但可以用自身的setItem,getItem等方便存取，也可以像普通对象一样用点(.)操作符，及[]的方式进行数据存储，像如下的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="built_in">window</span>.localStorage; </div><div class="line">storage.key1 = <span class="string">"hello"</span>; </div><div class="line">storage[<span class="string">"key2"</span>] = <span class="string">"world"</span>; </div><div class="line"><span class="built_in">console</span>.log(storage.key1); </div><div class="line"><span class="built_in">console</span>.log(storage[<span class="string">"key2"</span>]);</div></pre></td></tr></table></figure></p>
+<h3 id="localStorage和sessionStorage的key和length属性实现遍历"><a href="#localStorage和sessionStorage的key和length属性实现遍历" class="headerlink" title="localStorage和sessionStorage的key和length属性实现遍历"></a>localStorage和sessionStorage的key和length属性实现遍历</h3><p>sessionStorage和localStorage提供的key()和length可以方便的实现存储的数据遍历，例如下面的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> storage = <span class="built_in">window</span>.localStorage; </div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>, len = storage.length; i  &lt;  len; i++)&#123;    </div><div class="line">  <span class="keyword">var</span> key = storage.key(i);    </div><div class="line">  <span class="keyword">var</span> value = storage.getItem(key);    </div><div class="line">  <span class="built_in">console</span>.log(key + <span class="string">"="</span> + value); </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="storage事件"><a href="#storage事件" class="headerlink" title="storage事件"></a>storage事件</h3><p>-[ ] storage还提供了storage事件，当键值改变或者clear的时候，就可以触发storage事件，如下面的代码就添加了一个storage事件改变的监听：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="built_in">window</span>.addEventListener)&#123; 	 </div><div class="line">	<span class="built_in">window</span>.addEventListener(<span class="string">"storage"</span>,handle_storage,<span class="literal">false</span>);</div><div class="line"> &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">window</span>.attachEvent)&#123; 	 </div><div class="line"> 	<span class="built_in">window</span>.attachEvent(<span class="string">"onstorage"</span>,handle_storage); </div><div class="line"> &#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">handle_storage</span>(<span class="params">e</span>)</span>&#123; 	</div><div class="line">	<span class="keyword">if</span>(!e)&#123;</div><div class="line">		e=<span class="built_in">window</span>.event;</div><div class="line">	&#125;	 </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<pre><code>|   Property    |      Type     |   Description   |
+
+|     key       |     Strin     |   The named key that was added, removed, or moddified |
+
+|    oldValue   |      Any      |   The previous value(now overwritten), or null if a new item was added|
+
+|   newValue    |      Any      |   The new value, or null if an item was added |
+
+| zebra stripes |     String    |   The page that called the method that triggered this change |
+</code></pre><hr>
+<ul>
+<li>栗子<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"存储到localStorage"</span> <span class="attr">name</span>=<span class="string">""</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript">		<span class="keyword">var</span> obj = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">			<span class="keyword">var</span> o = &#123;&#125;;</span></div><div class="line"><span class="javascript">			o.StorageClick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">				<span class="keyword">var</span> otext = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>)[<span class="number">0</span>].value;</span></div><div class="line"><span class="javascript">				<span class="built_in">window</span>.localStorage.setItem(<span class="string">"val"</span>, otext);</span></div><div class="line"><span class="undefined">			&#125;;</span></div><div class="line"><span class="javascript">			<span class="keyword">return</span> o;</span></div><div class="line"><span class="undefined">		&#125;)();</span></div><div class="line"><span class="javascript">		<span class="built_in">window</span>.onload=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="javascript">			<span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>)[<span class="number">0</span>].value=<span class="built_in">window</span>.localStorage.getItem(<span class="string">'val'</span>);</span></div><div class="line"><span class="javascript">			<span class="built_in">document</span>.getElementsByTagName(<span class="string">'input'</span>)[<span class="number">1</span>].onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span></div><div class="line"><span class="undefined">				obj.StorageClick();</span></div><div class="line"><span class="undefined">			&#125;</span></div><div class="line"><span class="undefined">			</span></div><div class="line"><span class="undefined">		&#125;</span></div><div class="line"><span class="undefined">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="sessionStorage-、localStorage-和-cookie-之间的区别"><a href="#sessionStorage-、localStorage-和-cookie-之间的区别" class="headerlink" title="sessionStorage 、localStorage 和 cookie 之间的区别"></a>sessionStorage 、localStorage 和 cookie 之间的区别</h1><hr>
+<ol>
+<li><p>共同点：都是保存在浏览器端，且同源的。</p>
+</li>
+<li><p>区别：</p>
+<ul>
+<li><p>cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；cookie数据还有路径（path）的概念，可以限制cookie只属于某个路径下。存储大小限制也不同，cookie数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，如会话标识。</p>
+</li>
+<li><p>而sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。<br>数据有效期不同，sessionStorage：仅在当前浏览器窗口关闭前有效，自然也就不可能持久保持；localStorage：始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据；cookie只在设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。</p>
+</li>
+<li><p>作用域不同，sessionStorage不在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都是共享的；cookie也是在所有同源窗口中都是共享的。Web Storage 支持事件通知机制，可以将数据更新的通知发送给监听者。Web Storage 的 api 接口使用更方便。</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃糖果</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/11/18/sessionStorage&localStorage&cookie/">cookie 、sessionStorage 、localStorage之间的区别和使用</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Rieko 的个人博客">Rieko</a></p>
+        <p><span>发布时间:</span>2017年11月18日 - 19时01分</p>
+        <p><span>最后更新:</span>2017年11月18日 - 23时09分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/11/18/sessionStorage&localStorage&cookie/" title="cookie 、sessionStorage 、localStorage之间的区别和使用">http://showcc.github.io/2017/11/18/sessionStorage&amp;localStorage&amp;cookie/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://showcc.github.io/2017/11/18/sessionStorage&amp;localStorage&amp;cookie/　　作者: Rieko" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>友情提示:</span> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/18/H5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">H5项目常见问题汇总及解决方案</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#cookie"><span class="toc-number">1.</span> <span class="toc-text">cookie</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置cookie"><span class="toc-number">1.0.1.</span> <span class="toc-text">设置cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取cookie的值"><span class="toc-number">1.0.2.</span> <span class="toc-text">获取cookie的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#给cookie设置终止日期"><span class="toc-number">1.0.3.</span> <span class="toc-text">给cookie设置终止日期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除cookie"><span class="toc-number">1.0.4.</span> <span class="toc-text">删除cookie</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定可访问cookie的路径"><span class="toc-number">1.0.5.</span> <span class="toc-text">指定可访问cookie的路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定可访问cookie的主机名"><span class="toc-number">1.0.6.</span> <span class="toc-text">指定可访问cookie的主机名</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sessionStorage和localStorage"><span class="toc-number">2.</span> <span class="toc-text">sessionStorage和localStorage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html5-web-storage的浏览器支持情况"><span class="toc-number">2.0.1.</span> <span class="toc-text">html5 web storage的浏览器支持情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#localStorage和sessionStorage操作"><span class="toc-number">2.0.2.</span> <span class="toc-text">localStorage和sessionStorage操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#localStorage和sessionStorage的方法"><span class="toc-number">2.0.2.1.</span> <span class="toc-text">localStorage和sessionStorage的方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他操作方法：点操作和"><span class="toc-number">2.0.3.</span> <span class="toc-text">其他操作方法：点操作和[]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#localStorage和sessionStorage的key和length属性实现遍历"><span class="toc-number">2.0.4.</span> <span class="toc-text">localStorage和sessionStorage的key和length属性实现遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#storage事件"><span class="toc-number">2.0.5.</span> <span class="toc-text">storage事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sessionStorage-、localStorage-和-cookie-之间的区别"><span class="toc-number">3.</span> <span class="toc-text">sessionStorage 、localStorage 和 cookie 之间的区别</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+
+    
+        <div id="lv-container" data-id="city" data-uid="MTAyMC8yODY5MS81MjYy" style="width:90%;margin:5% auto 0 auto;background: #fff;padding: 0 12px;border-radius: 5px;">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/11/18/H5/" title="下一篇: H5项目常见问题汇总及解决方案">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/sessionStorage&localStorage&cookie/">cookie 、sessionStorage 、localStorage之间的区别和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/H5/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/JS array/">js数组操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/17/JSONP/">JSONP是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/16/Bower/">Bower使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/I and the temple of earth/">我与地坛--史铁生</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/11/ajax/">$.ajax()方法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/10/cookie and session/">cookie 和session 的区别详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/21/Front-end engineering/">前端工程</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/With the notes/">随手记（问题总结）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/25/Graduation season/">毕业季</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/08/Change the computer update the hexo blog/">使用hexo，换了电脑怎么更新博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Hexo-spfk-LiveRe/">Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/Mother's Day/">燕诗示刘叟</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/10/Life emotion/">生活</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 Rieko
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 3;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
