@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://showcc.github.io/"/>
-  <updated>2017-11-18T15:09:26.112Z</updated>
+  <updated>2018-02-03T16:26:28.065Z</updated>
   <id>http://showcc.github.io/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue 2.0  路由传递参数</title>
+    <link href="http://showcc.github.io/2018/02/04/Route/"/>
+    <id>http://showcc.github.io/2018/02/04/Route/</id>
+    <published>2018-02-03T16:07:52.193Z</published>
+    <updated>2018-02-03T16:26:28.065Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h1 id="Vue-路由传递参数-有两种方式："><a href="#Vue-路由传递参数-有两种方式：" class="headerlink" title="Vue 路由传递参数 有两种方式："></a>Vue 路由传递参数 有两种方式：</h1><h3 id="一、用name传递参数"><a href="#一、用name传递参数" class="headerlink" title="一、用name传递参数"></a>一、用name传递参数</h3><p>两步完成用name传值并显示在模板里：</p><ol><li><p>在路由文件src/router/index.js里配置name属性。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">routes: [</div><div class="line">    &#123;</div><div class="line">      path: <span class="string">'/'</span>,</div><div class="line">      name: <span class="string">'Hello'</span>,</div><div class="line">      component: Hello</div><div class="line">    &#125;</div><div class="line">]</div></pre></td></tr></table></figure></li><li><p>模板里(src/App.vue)用$router.name的形势接收，比如直接在模板中显示：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; $route.name&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></li></ol><a id="more"></a><h3 id="二、通过-标签中的to传参"><a href="#二、通过-标签中的to传参" class="headerlink" title="二、通过 标签中的to传参"></a>二、通过<router-link> 标签中的to传参</router-link></h3><p>上边的传参或许很不正规，也不方便，其实工作中多数传参是不用name进行传参的，我们用<router-link>标签中的to属性进行传参，需要注意的是这里的to要进行一个绑定，写成:to。先来看一下这种传参方法的基本语法：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123;name:xxx,params:&#123;key:value&#125;&#125;"</span>&gt;</span>valueString<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure></router-link></p><p>这里的to前边是带冒号的，然后后边跟的是一个对象形势的字符串.</p><ul><li>name：就是我们在路由配置文件中起的name值。</li><li>params：就是我们要传的参数，它也是对象形势，在对象里可以传递多个值。</li></ul><p>了解基本的语法后，我们改造一下我们的src/App.vue里的<router-link>标签,我们把hi1页面的<router-link>进行修改。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">router-link</span> <span class="attr">:to</span>=<span class="string">"&#123;name:'hi1',params:&#123;username:'jspang'&#125;&#125;"</span>&gt;</span>Hi页面1<span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></div></pre></td></tr></table></figure></router-link></router-link></p><p>把src/reouter/index.js文件里给hi1配置的路由起个name,就叫hi1.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;path:'/hi1',name:'hi1',component:Hi1&#125;,</div></pre></td></tr></table></figure></p><p><code>最后在模板里(src/components/Hi1.vue)用$route.params.username进行接收.</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;$route.params.username&#125;&#125;</div></pre></td></tr></table></figure></p><h1 id="vue-router-利用url传递参数-冒号的形式传递参数"><a href="#vue-router-利用url传递参数-冒号的形式传递参数" class="headerlink" title="vue-router 利用url传递参数 :冒号的形式传递参数"></a>vue-router 利用url传递参数 :冒号的形式传递参数</h1><p>在路由配置文件里以:冒号的形式传递参数，这就是对参数的绑定。</p><p>1.在配置文件里以冒号的形式设置参数。我们在/src/router/index.js文件里配置路由。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    path:<span class="string">'/params/:newsId/:newsTitle'</span>,</div><div class="line">     component:Params</div><div class="line">&#125;</div></pre></td></tr></table></figure></p><ul><li>我们需要传递参数是新闻ID（newsId）和新闻标题（newsTitle）.所以我们在路由配置文件里制定了这两个值。</li></ul><p>2.在src/components目录下建立我们params.vue组件，也可以说是页面。我们在页面里输出了url传递的的新闻ID和新闻标题。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;template&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">        &lt;h2&gt;&#123;&#123; msg &#125;&#125;&lt;<span class="regexp">/h2&gt;</span></div><div class="line"><span class="regexp">        &lt;p&gt;新闻ID：&#123;&#123; $route.params.newsId&#125;&#125;&lt;/</span>p&gt;</div><div class="line">        &lt;p&gt;新闻标题：&#123;&#123; $route.params.newsTitle&#125;&#125;&lt;<span class="regexp">/p&gt;</span></div><div class="line"><span class="regexp">    &lt;/</span>div&gt;</div><div class="line">&lt;<span class="regexp">/template&gt;</span></div><div class="line"><span class="regexp"> </span></div><div class="line"><span class="regexp">&lt;script&gt;</span></div><div class="line"><span class="regexp">export default &#123;</span></div><div class="line"><span class="regexp">  name: 'params',</span></div><div class="line"><span class="regexp">  data () &#123;</span></div><div class="line"><span class="regexp">    return &#123;</span></div><div class="line"><span class="regexp">      msg: 'params page'</span></div><div class="line"><span class="regexp">    &#125;</span></div><div class="line"><span class="regexp">  &#125;</span></div><div class="line"><span class="regexp">&#125;</span></div><div class="line"><span class="regexp">&lt;/</span>script&gt;</div></pre></td></tr></table></figure></p><p>3.在App.vue文件里加入我们的<router-view>标签。这时候我们可以直接利用url传值了。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;router-link to=<span class="string">"/params/198/jspang website is very good"</span>&gt;params&lt;<span class="regexp">/router-link&gt;</span></div></pre></td></tr></table></figure></router-view></p><ul><li>正则表达式在URL传值中的应用</li></ul><p>上边的例子，我们传递了新闻编号，现在需求升级了，我们希望我们传递的新闻ID只能是数字的形式，这时候我们就需要在传递时有个基本的类型判断，vue是支持正则的。<br>加入正则需要在路由配置文件里（/src/router/index.js）以圆括号的形式加入。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">path:<span class="string">'/params/:newsId(\\d+)/:newsTitle'</span>,</div></pre></td></tr></table></figure></p><ul><li>加入了正则，我们再传递数字之外的其他参数，params.vue组件就没有办法接收到。</li></ul><hr><p>转自<a href="https://www.cnblogs.com/zccblog/p/7235779.html" target="_blank" rel="external">https://www.cnblogs.com/zccblog/p/7235779.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;h1 id=&quot;Vue-路由传递参数-有两种方式：&quot;&gt;&lt;a href=&quot;#Vue-路由传递参数-有两种方式：&quot; class=&quot;headerlink&quot; title=&quot;Vue 路由传递参数 有两种方式：&quot;&gt;&lt;/a&gt;Vue 路由传递参数 有两种方式：&lt;/h1&gt;&lt;h3 id=&quot;一、用name传递参数&quot;&gt;&lt;a href=&quot;#一、用name传递参数&quot; class=&quot;headerlink&quot; title=&quot;一、用name传递参数&quot;&gt;&lt;/a&gt;一、用name传递参数&lt;/h3&gt;&lt;p&gt;两步完成用name传值并显示在模板里：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在路由文件src/router/index.js里配置name属性。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;routes: [&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      path: &lt;span class=&quot;string&quot;&gt;&#39;/&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      name: &lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      component: Hello&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;]&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;模板里(src/App.vue)用$router.name的形势接收，比如直接在模板中显示：&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;#123;&amp;#123; $route.name&amp;#125;&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;p&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="http://showcc.github.io/tags/vue/"/>
+    
+      <category term="路由" scheme="http://showcc.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原生js获取浏览器窗口及元素宽高常用方法集合</title>
+    <link href="http://showcc.github.io/2018/02/03/Method%20set/"/>
+    <id>http://showcc.github.io/2018/02/03/Method set/</id>
+    <published>2018-02-03T15:58:47.155Z</published>
+    <updated>2018-02-03T16:11:02.532Z</updated>
+    
+    <content type="html"><![CDATA[<hr><ul><li>窗口可视区域宽度： document.documentElement.clientWidth || document.body.clientWidth;</li><li>窗口可视区域高度： document.documentElement.clientHeight || document.body.clientHeight;</li><li>窗口可视区域宽度+边线和滚动条： document.body.offsetWidth ;</li><li>窗口可视区域高度+边线和滚动条： document.body.offsetHeight ;</li><li>实际内容的宽度： document.body.scrollWidth;</li><li>实际内容的高度： document.body.scrollHeight;</li><li>滚动条下拉被卷起来的距离：document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;</li><li>滚动条侧拉被卷起来的距离：document.body.scrollLeft || document.documentElement.scrollLeft ;</li><li>网页正文部分上：window.screenTop;</li><li>网页正文部分左：window.screenLeft;</li><li>元素的宽度：obj.offsetWidth;</li><li>元素的高度：obj.offsetHeight;</li><li>相对于父元素的上位移：obj.offsetTop;（在元素的包含元素不含滚动条的情况下）</li><li>相对于父元素的左位移：obj.offsetLeft;（在元素的包含元素不含滚动条的情况下）</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;窗口可视区域宽度： document.documentElement.clientWidth || document.body.clientWidth;&lt;/li&gt;
+&lt;li&gt;窗口可视区域高度： document.documentElement.clien
+      
+    
+    </summary>
+    
+    
+      <category term="原生js" scheme="http://showcc.github.io/tags/%E5%8E%9F%E7%94%9Fjs/"/>
+    
+      <category term="宽高获取" scheme="http://showcc.github.io/tags/%E5%AE%BD%E9%AB%98%E8%8E%B7%E5%8F%96/"/>
+    
+  </entry>
   
   <entry>
     <title>cookie 、sessionStorage 、localStorage之间的区别和使用</title>
