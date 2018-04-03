@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://showcc.github.io/"/>
+  <link href="https://blog.2019w.cn/"/>
   <updated>2018-03-06T14:52:24.299Z</updated>
-  <id>http://showcc.github.io/</id>
+  <id>https://blog.2019w.cn/</id>
   
   <author>
     <name>Rieko</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>YAHOO 35条前端优化建议</title>
-    <link href="http://showcc.github.io/2018/03/06/optimization/"/>
-    <id>http://showcc.github.io/2018/03/06/optimization/</id>
+    <link href="https://blog.2019w.cn/2018/03/06/optimization/"/>
+    <id>https://blog.2019w.cn/2018/03/06/optimization/</id>
     <published>2018-03-06T13:56:13.985Z</published>
     <updated>2018-03-06T14:52:24.299Z</updated>
     
@@ -46,18 +46,18 @@
     </summary>
     
     
-      <category term="前端优化" scheme="http://showcc.github.io/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
+      <category term="前端优化" scheme="https://blog.2019w.cn/tags/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96/"/>
     
-      <category term="YAHOO" scheme="http://showcc.github.io/tags/YAHOO/"/>
+      <category term="YAHOO" scheme="https://blog.2019w.cn/tags/YAHOO/"/>
     
-      <category term="35条" scheme="http://showcc.github.io/tags/35%E6%9D%A1/"/>
+      <category term="35条" scheme="https://blog.2019w.cn/tags/35%E6%9D%A1/"/>
     
   </entry>
   
   <entry>
     <title>ES6入门——Set和Map数据结构</title>
-    <link href="http://showcc.github.io/2018/02/11/ES6-map%20and%20set/"/>
-    <id>http://showcc.github.io/2018/02/11/ES6-map and set/</id>
+    <link href="https://blog.2019w.cn/2018/02/11/ES6-map%20and%20set/"/>
+    <id>https://blog.2019w.cn/2018/02/11/ES6-map and set/</id>
     <published>2018-02-11T01:51:21.524Z</published>
     <updated>2018-03-06T13:56:57.966Z</updated>
     
@@ -72,18 +72,18 @@
     </summary>
     
     
-      <category term="ES6" scheme="http://showcc.github.io/tags/ES6/"/>
+      <category term="ES6" scheme="https://blog.2019w.cn/tags/ES6/"/>
     
-      <category term="Set" scheme="http://showcc.github.io/tags/Set/"/>
+      <category term="Set" scheme="https://blog.2019w.cn/tags/Set/"/>
     
-      <category term="Map" scheme="http://showcc.github.io/tags/Map/"/>
+      <category term="Map" scheme="https://blog.2019w.cn/tags/Map/"/>
     
   </entry>
   
   <entry>
     <title>Vue 2.0  路由传递参数</title>
-    <link href="http://showcc.github.io/2018/02/04/Route/"/>
-    <id>http://showcc.github.io/2018/02/04/Route/</id>
+    <link href="https://blog.2019w.cn/2018/02/04/Route/"/>
+    <id>https://blog.2019w.cn/2018/02/04/Route/</id>
     <published>2018-02-03T16:07:52.193Z</published>
     <updated>2018-02-03T16:26:28.065Z</updated>
     
@@ -105,16 +105,16 @@
     </summary>
     
     
-      <category term="vue" scheme="http://showcc.github.io/tags/vue/"/>
+      <category term="vue" scheme="https://blog.2019w.cn/tags/vue/"/>
     
-      <category term="路由" scheme="http://showcc.github.io/tags/%E8%B7%AF%E7%94%B1/"/>
+      <category term="路由" scheme="https://blog.2019w.cn/tags/%E8%B7%AF%E7%94%B1/"/>
     
   </entry>
   
   <entry>
     <title>原生js获取浏览器窗口及元素宽高常用方法集合</title>
-    <link href="http://showcc.github.io/2018/02/03/Method%20set/"/>
-    <id>http://showcc.github.io/2018/02/03/Method set/</id>
+    <link href="https://blog.2019w.cn/2018/02/03/Method%20set/"/>
+    <id>https://blog.2019w.cn/2018/02/03/Method set/</id>
     <published>2018-02-03T15:58:47.155Z</published>
     <updated>2018-02-03T16:11:02.532Z</updated>
     
@@ -133,16 +133,16 @@
     </summary>
     
     
-      <category term="原生js" scheme="http://showcc.github.io/tags/%E5%8E%9F%E7%94%9Fjs/"/>
+      <category term="原生js" scheme="https://blog.2019w.cn/tags/%E5%8E%9F%E7%94%9Fjs/"/>
     
-      <category term="宽高获取" scheme="http://showcc.github.io/tags/%E5%AE%BD%E9%AB%98%E8%8E%B7%E5%8F%96/"/>
+      <category term="宽高获取" scheme="https://blog.2019w.cn/tags/%E5%AE%BD%E9%AB%98%E8%8E%B7%E5%8F%96/"/>
     
   </entry>
   
   <entry>
     <title>cookie 、sessionStorage 、localStorage之间的区别和使用</title>
-    <link href="http://showcc.github.io/2017/11/18/sessionStorage&amp;localStorage&amp;cookie/"/>
-    <id>http://showcc.github.io/2017/11/18/sessionStorage&amp;localStorage&amp;cookie/</id>
+    <link href="https://blog.2019w.cn/2017/11/18/sessionStorage&amp;localStorage&amp;cookie/"/>
+    <id>https://blog.2019w.cn/2017/11/18/sessionStorage&amp;localStorage&amp;cookie/</id>
     <published>2017-11-18T11:01:43.242Z</published>
     <updated>2018-03-06T13:39:37.063Z</updated>
     
@@ -158,18 +158,18 @@
     </summary>
     
     
-      <category term="cookie" scheme="http://showcc.github.io/tags/cookie/"/>
+      <category term="cookie" scheme="https://blog.2019w.cn/tags/cookie/"/>
     
-      <category term="sessionStorage" scheme="http://showcc.github.io/tags/sessionStorage/"/>
+      <category term="sessionStorage" scheme="https://blog.2019w.cn/tags/sessionStorage/"/>
     
-      <category term="localStorage" scheme="http://showcc.github.io/tags/localStorage/"/>
+      <category term="localStorage" scheme="https://blog.2019w.cn/tags/localStorage/"/>
     
   </entry>
   
   <entry>
     <title>H5项目常见问题汇总及解决方案</title>
-    <link href="http://showcc.github.io/2017/11/18/H5/"/>
-    <id>http://showcc.github.io/2017/11/18/H5/</id>
+    <link href="https://blog.2019w.cn/2017/11/18/H5/"/>
+    <id>https://blog.2019w.cn/2017/11/18/H5/</id>
     <published>2017-11-18T06:39:28.699Z</published>
     <updated>2017-11-18T07:04:57.546Z</updated>
     
@@ -183,14 +183,14 @@
     </summary>
     
     
-      <category term="H5" scheme="http://showcc.github.io/tags/H5/"/>
+      <category term="H5" scheme="https://blog.2019w.cn/tags/H5/"/>
     
   </entry>
   
   <entry>
     <title>js数组操作</title>
-    <link href="http://showcc.github.io/2017/11/18/JS%20array/"/>
-    <id>http://showcc.github.io/2017/11/18/JS array/</id>
+    <link href="https://blog.2019w.cn/2017/11/18/JS%20array/"/>
+    <id>https://blog.2019w.cn/2017/11/18/JS array/</id>
     <published>2017-11-18T06:08:58.687Z</published>
     <updated>2017-11-18T06:30:42.430Z</updated>
     
@@ -207,16 +207,16 @@
     </summary>
     
     
-      <category term="js" scheme="http://showcc.github.io/tags/js/"/>
+      <category term="js" scheme="https://blog.2019w.cn/tags/js/"/>
     
-      <category term="数组" scheme="http://showcc.github.io/tags/%E6%95%B0%E7%BB%84/"/>
+      <category term="数组" scheme="https://blog.2019w.cn/tags/%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>JSONP是什么</title>
-    <link href="http://showcc.github.io/2017/11/17/JSONP/"/>
-    <id>http://showcc.github.io/2017/11/17/JSONP/</id>
+    <link href="https://blog.2019w.cn/2017/11/17/JSONP/"/>
+    <id>https://blog.2019w.cn/2017/11/17/JSONP/</id>
     <published>2017-11-16T16:23:30.318Z</published>
     <updated>2017-11-16T16:45:17.094Z</updated>
     
@@ -239,18 +239,18 @@
     </summary>
     
     
-      <category term="ajax" scheme="http://showcc.github.io/tags/ajax/"/>
+      <category term="ajax" scheme="https://blog.2019w.cn/tags/ajax/"/>
     
-      <category term="json" scheme="http://showcc.github.io/tags/json/"/>
+      <category term="json" scheme="https://blog.2019w.cn/tags/json/"/>
     
-      <category term="javascript" scheme="http://showcc.github.io/tags/javascript/"/>
+      <category term="javascript" scheme="https://blog.2019w.cn/tags/javascript/"/>
     
   </entry>
   
   <entry>
     <title>Bower使用指南</title>
-    <link href="http://showcc.github.io/2017/11/16/Bower/"/>
-    <id>http://showcc.github.io/2017/11/16/Bower/</id>
+    <link href="https://blog.2019w.cn/2017/11/16/Bower/"/>
+    <id>https://blog.2019w.cn/2017/11/16/Bower/</id>
     <published>2017-11-16T15:57:03.800Z</published>
     <updated>2017-11-16T16:25:13.446Z</updated>
     
@@ -265,16 +265,16 @@
     </summary>
     
     
-      <category term="Bower" scheme="http://showcc.github.io/tags/Bower/"/>
+      <category term="Bower" scheme="https://blog.2019w.cn/tags/Bower/"/>
     
-      <category term="管理工具" scheme="http://showcc.github.io/tags/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
+      <category term="管理工具" scheme="https://blog.2019w.cn/tags/%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>我与地坛--史铁生</title>
-    <link href="http://showcc.github.io/2017/09/23/I%20and%20the%20temple%20of%20earth/"/>
-    <id>http://showcc.github.io/2017/09/23/I and the temple of earth/</id>
+    <link href="https://blog.2019w.cn/2017/09/23/I%20and%20the%20temple%20of%20earth/"/>
+    <id>https://blog.2019w.cn/2017/09/23/I and the temple of earth/</id>
     <published>2017-09-23T05:26:26.593Z</published>
     <updated>2017-09-23T10:14:13.702Z</updated>
     
@@ -289,16 +289,16 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://showcc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://blog.2019w.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="抒情散文" scheme="http://showcc.github.io/tags/%E6%8A%92%E6%83%85%E6%95%A3%E6%96%87/"/>
+      <category term="抒情散文" scheme="https://blog.2019w.cn/tags/%E6%8A%92%E6%83%85%E6%95%A3%E6%96%87/"/>
     
   </entry>
   
   <entry>
     <title>$.ajax()方法详解</title>
-    <link href="http://showcc.github.io/2017/09/11/ajax/"/>
-    <id>http://showcc.github.io/2017/09/11/ajax/</id>
+    <link href="https://blog.2019w.cn/2017/09/11/ajax/"/>
+    <id>https://blog.2019w.cn/2017/09/11/ajax/</id>
     <published>2017-09-10T16:03:36.252Z</published>
     <updated>2017-09-10T16:30:46.881Z</updated>
     
@@ -311,14 +311,14 @@
     </summary>
     
     
-      <category term="ajax" scheme="http://showcc.github.io/tags/ajax/"/>
+      <category term="ajax" scheme="https://blog.2019w.cn/tags/ajax/"/>
     
   </entry>
   
   <entry>
     <title>cookie 和session 的区别详解</title>
-    <link href="http://showcc.github.io/2017/09/10/cookie%20and%20session/"/>
-    <id>http://showcc.github.io/2017/09/10/cookie and session/</id>
+    <link href="https://blog.2019w.cn/2017/09/10/cookie%20and%20session/"/>
+    <id>https://blog.2019w.cn/2017/09/10/cookie and session/</id>
     <published>2017-09-10T15:42:58.076Z</published>
     <updated>2017-09-10T16:30:13.431Z</updated>
     
@@ -331,16 +331,16 @@
     </summary>
     
     
-      <category term="cookie" scheme="http://showcc.github.io/tags/cookie/"/>
+      <category term="cookie" scheme="https://blog.2019w.cn/tags/cookie/"/>
     
-      <category term="session" scheme="http://showcc.github.io/tags/session/"/>
+      <category term="session" scheme="https://blog.2019w.cn/tags/session/"/>
     
   </entry>
   
   <entry>
     <title>前端工程</title>
-    <link href="http://showcc.github.io/2017/07/21/Front-end%20engineering/"/>
-    <id>http://showcc.github.io/2017/07/21/Front-end engineering/</id>
+    <link href="https://blog.2019w.cn/2017/07/21/Front-end%20engineering/"/>
+    <id>https://blog.2019w.cn/2017/07/21/Front-end engineering/</id>
     <published>2017-07-21T09:48:24.592Z</published>
     <updated>2018-02-11T02:15:01.355Z</updated>
     
@@ -354,16 +354,16 @@
     </summary>
     
     
-      <category term="前端工程" scheme="http://showcc.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
+      <category term="前端工程" scheme="https://blog.2019w.cn/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B/"/>
     
-      <category term="三个阶段" scheme="http://showcc.github.io/tags/%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5/"/>
+      <category term="三个阶段" scheme="https://blog.2019w.cn/tags/%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5/"/>
     
   </entry>
   
   <entry>
     <title>随手记（问题总结）</title>
-    <link href="http://showcc.github.io/2017/07/13/With%20the%20notes/"/>
-    <id>http://showcc.github.io/2017/07/13/With the notes/</id>
+    <link href="https://blog.2019w.cn/2017/07/13/With%20the%20notes/"/>
+    <id>https://blog.2019w.cn/2017/07/13/With the notes/</id>
     <published>2017-07-13T01:38:46.537Z</published>
     <updated>2017-11-18T11:02:22.204Z</updated>
     
@@ -377,16 +377,16 @@
     </summary>
     
     
-      <category term="随手记" scheme="http://showcc.github.io/tags/%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
+      <category term="随手记" scheme="https://blog.2019w.cn/tags/%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
     
-      <category term="问题总结" scheme="http://showcc.github.io/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
+      <category term="问题总结" scheme="https://blog.2019w.cn/tags/%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/"/>
     
   </entry>
   
   <entry>
     <title>毕业季</title>
-    <link href="http://showcc.github.io/2017/06/25/Graduation%20season/"/>
-    <id>http://showcc.github.io/2017/06/25/Graduation season/</id>
+    <link href="https://blog.2019w.cn/2017/06/25/Graduation%20season/"/>
+    <id>https://blog.2019w.cn/2017/06/25/Graduation season/</id>
     <published>2017-06-25T08:37:59.058Z</published>
     <updated>2017-07-13T01:51:35.242Z</updated>
     
@@ -399,18 +399,18 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://showcc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://blog.2019w.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="毕业" scheme="http://showcc.github.io/tags/%E6%AF%95%E4%B8%9A/"/>
+      <category term="毕业" scheme="https://blog.2019w.cn/tags/%E6%AF%95%E4%B8%9A/"/>
     
-      <category term="2017.06.17" scheme="http://showcc.github.io/tags/2017-06-17/"/>
+      <category term="2017.06.17" scheme="https://blog.2019w.cn/tags/2017-06-17/"/>
     
   </entry>
   
   <entry>
     <title>使用hexo，换了电脑怎么更新博客？</title>
-    <link href="http://showcc.github.io/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/"/>
-    <id>http://showcc.github.io/2017/06/08/Change the computer update the hexo blog/</id>
+    <link href="https://blog.2019w.cn/2017/06/08/Change%20the%20computer%20update%20the%20hexo%20blog/"/>
+    <id>https://blog.2019w.cn/2017/06/08/Change the computer update the hexo blog/</id>
     <published>2017-06-08T12:30:14.850Z</published>
     <updated>2017-07-13T04:04:45.581Z</updated>
     
@@ -427,18 +427,18 @@
     </summary>
     
     
-      <category term="Git" scheme="http://showcc.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://blog.2019w.cn/tags/Git/"/>
     
-      <category term="GitHub" scheme="http://showcc.github.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://blog.2019w.cn/tags/GitHub/"/>
     
-      <category term="Hexo" scheme="http://showcc.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.2019w.cn/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</title>
-    <link href="http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/"/>
-    <id>http://showcc.github.io/2017/05/28/Hexo-spfk-LiveRe/</id>
+    <link href="https://blog.2019w.cn/2017/05/28/Hexo-spfk-LiveRe/"/>
+    <id>https://blog.2019w.cn/2017/05/28/Hexo-spfk-LiveRe/</id>
     <published>2017-05-28T01:24:28.409Z</published>
     <updated>2017-06-11T01:42:07.483Z</updated>
     
@@ -457,22 +457,22 @@
     </summary>
     
     
-      <category term="Git" scheme="http://showcc.github.io/tags/Git/"/>
+      <category term="Git" scheme="https://blog.2019w.cn/tags/Git/"/>
     
-      <category term="GitHub" scheme="http://showcc.github.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="https://blog.2019w.cn/tags/GitHub/"/>
     
-      <category term="Hexo" scheme="http://showcc.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://blog.2019w.cn/tags/Hexo/"/>
     
-      <category term="spfk" scheme="http://showcc.github.io/tags/spfk/"/>
+      <category term="spfk" scheme="https://blog.2019w.cn/tags/spfk/"/>
     
-      <category term="LiveRe" scheme="http://showcc.github.io/tags/LiveRe/"/>
+      <category term="LiveRe" scheme="https://blog.2019w.cn/tags/LiveRe/"/>
     
   </entry>
   
   <entry>
     <title>燕诗示刘叟</title>
-    <link href="http://showcc.github.io/2017/05/14/Mother&#39;s%20Day/"/>
-    <id>http://showcc.github.io/2017/05/14/Mother&#39;s Day/</id>
+    <link href="https://blog.2019w.cn/2017/05/14/Mother&#39;s%20Day/"/>
+    <id>https://blog.2019w.cn/2017/05/14/Mother&#39;s Day/</id>
     <published>2017-05-14T10:38:35.893Z</published>
     <updated>2017-05-28T09:39:54.643Z</updated>
     
@@ -485,18 +485,18 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://showcc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://blog.2019w.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="母亲节" scheme="http://showcc.github.io/tags/%E6%AF%8D%E4%BA%B2%E8%8A%82/"/>
+      <category term="母亲节" scheme="https://blog.2019w.cn/tags/%E6%AF%8D%E4%BA%B2%E8%8A%82/"/>
     
-      <category term="诗词" scheme="http://showcc.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+      <category term="诗词" scheme="https://blog.2019w.cn/tags/%E8%AF%97%E8%AF%8D/"/>
     
   </entry>
   
   <entry>
     <title>生活</title>
-    <link href="http://showcc.github.io/2017/05/10/Life%20emotion/"/>
-    <id>http://showcc.github.io/2017/05/10/Life emotion/</id>
+    <link href="https://blog.2019w.cn/2017/05/10/Life%20emotion/"/>
+    <id>https://blog.2019w.cn/2017/05/10/Life emotion/</id>
     <published>2017-05-10T03:03:04.176Z</published>
     <updated>2017-05-28T09:40:00.614Z</updated>
     
@@ -512,11 +512,11 @@
     </summary>
     
     
-      <category term="随笔" scheme="http://showcc.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="https://blog.2019w.cn/tags/%E9%9A%8F%E7%AC%94/"/>
     
-      <category term="雨" scheme="http://showcc.github.io/tags/%E9%9B%A8/"/>
+      <category term="雨" scheme="https://blog.2019w.cn/tags/%E9%9B%A8/"/>
     
-      <category term="生活" scheme="http://showcc.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://blog.2019w.cn/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
