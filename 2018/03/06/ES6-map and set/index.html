@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ES6入门——Set和Map数据结构 | 王立战的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="SetES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。    Set本身是一个构造函数，用来生成Set数据结构。1234567var s = new Set();// 通过add方法向Set结构中加入成员[2, 3, 5, 4, 5, 2, 2].map(x =&amp;gt; s.add(x))for (i of s) &amp;#123; console.log(i) &amp;">
+<meta name="keywords" content="ES6,Set,Map">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6入门——Set和Map数据结构">
+<meta property="og:url" content="https://blog.2019w.cn/2018/03/06/ES6-map and set/index.html">
+<meta property="og:site_name" content="王立战的博客">
+<meta property="og:description" content="SetES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。    Set本身是一个构造函数，用来生成Set数据结构。1234567var s = new Set();// 通过add方法向Set结构中加入成员[2, 3, 5, 4, 5, 2, 2].map(x =&amp;gt; s.add(x))for (i of s) &amp;#123; console.log(i) &amp;">
+<meta property="og:updated_time" content="2018-03-06T13:56:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ES6入门——Set和Map数据结构">
+<meta name="twitter:description" content="SetES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。    Set本身是一个构造函数，用来生成Set数据结构。1234567var s = new Set();// 通过add方法向Set结构中加入成员[2, 3, 5, 4, 5, 2, 2].map(x =&amp;gt; s.add(x))for (i of s) &amp;#123; console.log(i) &amp;">
+  
+    <link rel="alternative" href="/atom.xml" title="王立战的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Rieko</a></h1>
+           <h1 style="margin-top:px;font-size:14px;"> <a href="javascript:;" >--路漫漫其修远兮--</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客主页</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/photos">相册</a></li>
+                        
+                            <li><a href="https://home.2019w.cn">个人主页</a></li>
+                        
+                            <li><a href="http://www.show08.com">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/2017-06-17/" style="font-size: 10px;">2017.06.17</a> <a href="/tags/35条/" style="font-size: 10px;">35条</a> <a href="/tags/Bower/" style="font-size: 10px;">Bower</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/YAHOO/" style="font-size: 10px;">YAHOO</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/cookie/" style="font-size: 15px;">cookie</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/三个阶段/" style="font-size: 10px;">三个阶段</a> <a href="/tags/前端优化/" style="font-size: 10px;">前端优化</a> <a href="/tags/前端工程/" style="font-size: 10px;">前端工程</a> <a href="/tags/原生js/" style="font-size: 10px;">原生js</a> <a href="/tags/宽高获取/" style="font-size: 10px;">宽高获取</a> <a href="/tags/抒情散文/" style="font-size: 10px;">抒情散文</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/毕业/" style="font-size: 10px;">毕业</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/管理工具/" style="font-size: 10px;">管理工具</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a> <a href="/tags/随手记/" style="font-size: 10px;">随手记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">我是一个很哇塞的小伙儿！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Rieko</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Rieko</a></h1>
+              <h1  class="header-author js-header-author" style="line-height:15px;margin-bottom:15px; font-size:14px;"> <a href="javascript:;" style="color:;">--路漫漫其修远兮--</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客主页</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/photos">相册</a></li>
+                
+                    <li><a href="https://home.2019w.cn">个人主页</a></li>
+                
+                    <li><a href="http://www.show08.com">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-ES6-map and set" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/06/ES6-map and set/" class="article-date">
+      <time datetime="2018-03-06T13:56:56.000Z" itemprop="datePublished">2018-03-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ES6入门——Set和Map数据结构
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Map/">Map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Set/">Set</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<h1 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h1><p>ES6提供了新的数据结构Set。类似于数组，只不过其成员值都是唯一的，没有重复的值。<br>    Set本身是一个构造函数，用来生成Set数据结构。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line"></div><div class="line"><span class="comment">// 通过add方法向Set结构中加入成员</span></div><div class="line">[<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">2</span>].map(<span class="function"><span class="params">x</span> =&gt;</span> s.add(x))</div><div class="line"></div><div class="line"><span class="keyword">for</span> (i <span class="keyword">of</span> s) &#123; <span class="built_in">console</span>.log(i) &#125;</div><div class="line"><span class="comment">// 2 3 4 5 （表明set结构不会添加重复的值）</span></div></pre></td></tr></table></figure></p>
+<p>Set结构接收一个数组作为参数，用来初始化。<br><a id="more"></a><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> items = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>]);</div><div class="line"></div><div class="line">items.size </div><div class="line"><span class="comment">// 5</span></div></pre></td></tr></table></figure></p>
+<p>向Set加入值的时候，不会发生类型转换。这意味着，在Set中5和”5”是两个不同的值。</p>
+<h3 id="Set结构有以下属性："><a href="#Set结构有以下属性：" class="headerlink" title="Set结构有以下属性："></a>Set结构有以下属性：</h3><ul>
+<li>Set.prototype.constructor: 构造函数，默认就是Set函数。</li>
+<li>set.prototype.size : 返回Set的成员总数。</li>
+</ul>
+<h3 id="Set结构有以下方法："><a href="#Set结构有以下方法：" class="headerlink" title="Set结构有以下方法："></a>Set结构有以下方法：</h3><ul>
+<li>add(value) : 添加某个值。</li>
+<li>delete(value) : 删除某个值。</li>
+<li>has(value) : 返回一个布尔值，表示该值是否为Set的成员。</li>
+<li>clear() : 清除所有成员。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">s.add(<span class="number">1</span>).add(<span class="number">2</span>).add(<span class="number">2</span>); <span class="comment">// 注意“2”被加入了两次</span></div><div class="line">s.size <span class="comment">//2</span></div><div class="line"></div><div class="line">s.has(<span class="number">1</span>) <span class="comment">// true</span></div><div class="line">s.has(<span class="number">2</span>) <span class="comment">// true</span></div><div class="line">s.has(<span class="number">3</span>) <span class="comment">// false</span></div><div class="line"></div><div class="line">s.delete(<span class="number">2</span>);</div><div class="line">s.has(<span class="number">2</span>)  <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<p>下面对比以下，看看在判断是否包括一个键上面，对象和Set的写法有哪些不同。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 对象写法</span></div><div class="line"><span class="keyword">var</span> properties = &#123;</div><div class="line">    <span class="string">"width"</span>: <span class="number">1</span>,</div><div class="line">    <span class="string">"height"</span>: <span class="number">1</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">if</span> ( properties[someName]) &#123;</div><div class="line">    <span class="comment">// do something</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/****************************************/</span></div><div class="line"></div><div class="line"><span class="comment">// Set的写法</span></div><div class="line"><span class="keyword">var</span> properties = <span class="keyword">new</span> <span class="built_in">Set</span>();</div><div class="line"></div><div class="line">properties.add(<span class="string">'width'</span>);</div><div class="line">peoperties.add(<span class="string">'height'</span>);</div><div class="line"></div><div class="line"><span class="keyword">if</span> ( properties.has(someName) ) &#123;</div><div class="line">    <span class="comment">// do something</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>注意：</strong> Array.from方法可以将Set结构转换为数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> items = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]);</div><div class="line"><span class="keyword">var</span> array = <span class="built_in">Array</span>.from( items );</div></pre></td></tr></table></figure>
+<p>这也提供了一种除去数组中重复元素的方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">dedupe</span>(<span class="params"> array </span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Array</span>.from( <span class="keyword">new</span> <span class="built_in">Set</span>(array) );</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>Js对象本质上是键值对的集合。但是只能使用字符串充当键。这在一定程度上给我们的使用带来很大的限制。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> data = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> element = <span class="built_in">document</span>.getElementById(<span class="string">"myDiv"</span>);</div><div class="line"></div><div class="line"><span class="comment">// 将DOM节点（即element）当做对象data的键.</span></div><div class="line"><span class="comment">// 但是对象只接受字符串作为键名，所以element被自动转换为字符串"[Object HTMLDivElement]"</span></div><div class="line">data[element] = metadata;</div></pre></td></tr></table></figure></p>
+<p>而ES6正是为了解决这个问题才提供了Map结构。它类似与对象，也是键值对集合，但是”键”的范围不限于字符串，对象也可以当作键。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line">o = &#123;<span class="attr">p</span>: <span class="string">"hello world"</span>&#125;;</div><div class="line"></div><div class="line">m.set(o, <span class="string">"content"</span>);</div><div class="line"><span class="built_in">console</span>.log( m.get(o) );  <span class="comment">// content</span></div></pre></td></tr></table></figure></p>
+<p>在上面的代码中，将对象o当作m的一个键。</p>
+<p>Map函数可接收一个数组进行初始化。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="string">"name"</span>, <span class="string">"小明"</span>], [<span class="string">"title"</span>, <span class="string">"Author"</span>]]);</div><div class="line"></div><div class="line">map.size <span class="comment">//2</span></div><div class="line">map.has(<span class="string">"name"</span>); <span class="comment">//true</span></div><div class="line">map.get(<span class="string">"name"</span>); <span class="comment">//小明</span></div><div class="line">map.has(<span class="string">"title"</span>); <span class="comment">//true</span></div><div class="line">map.get(<span class="string">"title"</span>); <span class="comment">//Author</span></div></pre></td></tr></table></figure></p>
+<pre><code>注意：只有针对同一个对象的引用，Map结构才将其视作同一个键。这一点要非常小心才行。
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line"></div><div class="line">map.set([<span class="string">'a'</span>], <span class="number">555</span>);</div><div class="line">map.get([<span class="string">'a'</span>]);  <span class="comment">// undefined</span></div></pre></td></tr></table></figure>
+<p>上面代码中set和get方法表面上是针对同一个键，但实际上这是两个值，内存地址是不一样的，因此get方法无法读取该键，返回undefined。</p>
+<p>再看看下面一段代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line"></div><div class="line"><span class="keyword">var</span> k1 = [<span class="string">'a'</span>];</div><div class="line"><span class="keyword">var</span> k2 = [<span class="string">'a'</span>];</div><div class="line"></div><div class="line">map.set(k1, <span class="number">111</span>);</div><div class="line">map.set(k2, <span class="number">222</span>);</div><div class="line"></div><div class="line">map.get( k1 );  <span class="comment">//111</span></div><div class="line">map.get( k2 );  <span class="comment">//222</span></div></pre></td></tr></table></figure></p>
+<p>上面代码，变量k1和k2的值是一样的，但是他们在Map结构中被视为两个键。即同样值的两个实例，在Map中被视为两个键。</p>
+<h3 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h3><p>Map结构有以下属性和方法：</p>
+<ul>
+<li>size : 返回成员总数。 </li>
+<li>set(key, value) : 设置一个键值对。 </li>
+<li>get(key) : 读取一个键。 </li>
+<li>has(key) : 返回一个布尔值，表示某个键是否在Map结构中。 </li>
+<li>delete(key) : 删除某个键。 </li>
+<li>clear() : 清除所有成员</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> m = <span class="keyword">new</span> <span class="built_in">Map</span>();</div><div class="line"></div><div class="line">m.set(<span class="string">"edition"</span>, <span class="number">6</span>); <span class="comment">// 键是字符串</span></div><div class="line">m.set(<span class="number">262</span>, <span class="string">"standard"</span>); <span class="comment">// 键是数字</span></div><div class="line">m.set(<span class="literal">undefined</span>, <span class="string">"nah"</span>); <span class="comment">//键是undefined</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> hello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"hello"</span>);</div><div class="line">&#125;</div><div class="line">m.set(hello, <span class="string">"Hello ES6!"</span>);  <span class="comment">//键是函数</span></div><div class="line"></div><div class="line">m.has(<span class="string">"edition"</span>);  <span class="comment">//true</span></div><div class="line">m.has(<span class="string">"years"</span>);  <span class="comment">//false</span></div><div class="line">m.has(<span class="number">262</span>);  <span class="comment">//true</span></div><div class="line">m.has(<span class="literal">undefined</span>);  <span class="comment">//true</span></div><div class="line">m.has(hello);  <span class="comment">//true</span></div><div class="line"></div><div class="line">m.delete( <span class="literal">undefined</span> );  </div><div class="line">m.has( <span class="literal">undefined</span> );  <span class="comment">//false</span></div><div class="line"></div><div class="line">m.get( hello );  <span class="comment">//hello ES6!</span></div><div class="line">m.get(<span class="string">"edition"</span>);  <span class="comment">//6</span></div></pre></td></tr></table></figure>
+<h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>Map原生提供三个遍历器。</p>
+<ul>
+<li>key() : 返回键名的遍历器。</li>
+<li>values() : 返回键值的遍历器。</li>
+<li>entries() : 返回所有成员的遍历器。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> ( <span class="keyword">let</span> key <span class="keyword">of</span> map.key() ) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"key: %s"</span>, key);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span> ( <span class="keyword">let</span> value <span class="keyword">of</span> map.value() ) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"value: %s"</span>, value);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span> ( <span class="keyword">let</span> item <span class="keyword">of</span> map.entries() ) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Key: %s, Value: %s"</span>, item[<span class="number">0</span>], item[<span class="number">1</span>]);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// same as using map.entries()</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> map) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Key: %s, Value: %s"</span>, item[<span class="number">0</span>], item[<span class="number">1</span>]);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外，Map还有一个<code>forEach</code>方法，与数组中的<code>forEach</code>方法类似，也可以实现遍历。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">map.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, key, map</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Key: %s, Value: %s"</span>, key, value);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p><code>forEach</code>方法还可接受第二个参数，用来绑定<code>this</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> reporter = &#123;</div><div class="line">    report: <span class="function"><span class="keyword">function</span>(<span class="params">key, value</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"key: %s, Value: %s"</span>, key, value);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">map.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, key, map</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.report(key, value)</div><div class="line">&#125;, reporter);</div></pre></td></tr></table></figure></p>
+<p>上面代码中，forEach()方法的回调函数中的<code>this</code>, 就指向<code>reporter</code>。</p>
+<hr>
+<p>转自 <a href="http://blog.csdn.net/u014695532/article/details/51815017" target="_blank" rel="external">http://blog.csdn.net/u014695532/article/details/51815017</a></p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃糖果</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/03/06/ES6-map and set/">ES6入门——Set和Map数据结构</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Rieko 的个人博客">Rieko</a></p>
+        <p><span>发布时间:</span>2018年03月06日 - 21时56分</p>
+        <p><span>最后更新:</span>2018年03月06日 - 21时56分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/06/ES6-map and set/" title="ES6入门——Set和Map数据结构">https://blog.2019w.cn/2018/03/06/ES6-map and set/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://blog.2019w.cn/2018/03/06/ES6-map and set/　　作者: Rieko" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>友情提示:</span> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2018/03/06/optimization/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          YAHOO 35条前端优化建议
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/06/sessionStorage&localStorage&cookie/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">cookie 、sessionStorage 、localStorage之间的区别和使用</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Set"><span class="toc-number">1.</span> <span class="toc-text">Set</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Set结构有以下属性："><span class="toc-number">1.0.1.</span> <span class="toc-text">Set结构有以下属性：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Set结构有以下方法："><span class="toc-number">1.0.2.</span> <span class="toc-text">Set结构有以下方法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Map"><span class="toc-number">2.</span> <span class="toc-text">Map</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本用法"><span class="toc-number">2.0.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性和方法"><span class="toc-number">2.0.2.</span> <span class="toc-text">属性和方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历"><span class="toc-number">2.0.3.</span> <span class="toc-text">遍历</span></a></li></ol></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+
+    
+        <div id="lv-container" data-id="city" data-uid="MTAyMC8yODY5MS81MjYy" style="width:90%;margin:5% auto 0 auto;background: #fff;padding: 0 12px;border-radius: 5px;">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2018/03/06/optimization/" title="上一篇: YAHOO 35条前端优化建议">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2018/03/06/sessionStorage&localStorage&cookie/" title="下一篇: cookie 、sessionStorage 、localStorage之间的区别和使用">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/optimization/">YAHOO 35条前端优化建议</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/ES6-map and set/">ES6入门——Set和Map数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/sessionStorage&localStorage&cookie/">cookie 、sessionStorage 、localStorage之间的区别和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/Front-end engineering/">前端工程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/04/Route/">Vue 2.0  路由传递参数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/04/Method set/">原生js获取浏览器窗口及元素宽高常用方法集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/With the notes/">随手记（问题总结）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/H5/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/JS array/">js数组操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/17/JSONP/">JSONP是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/17/Bower/">Bower使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/I and the temple of earth/">我与地坛--史铁生</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/11/ajax/">$.ajax()方法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/11/cookie and session/">cookie 和session 的区别详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/Change the computer update the hexo blog/">使用hexo，换了电脑怎么更新博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/Graduation season/">毕业季</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/Hexo-spfk-LiveRe/">Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Life emotion/">生活</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Mother's Day/">燕诗示刘叟</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Rieko
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 3;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>cookie 和session 的区别详解 | 王立战的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="二者的定义:">
+<meta name="keywords" content="cookie,session">
+<meta property="og:type" content="article">
+<meta property="og:title" content="cookie 和session 的区别详解">
+<meta property="og:url" content="https://blog.2019w.cn/2017/09/11/cookie and session/index.html">
+<meta property="og:site_name" content="王立战的博客">
+<meta property="og:description" content="二者的定义:">
+<meta property="og:image" content="https://show8.github.io/blogimage/cookie.jpg">
+<meta property="og:updated_time" content="2017-09-10T16:30:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="cookie 和session 的区别详解">
+<meta name="twitter:description" content="二者的定义:">
+<meta name="twitter:image" content="https://show8.github.io/blogimage/cookie.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="王立战的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">Rieko</a></h1>
+           <h1 style="margin-top:px;font-size:14px;"> <a href="javascript:;" >--路漫漫其修远兮--</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客主页</a></li>
+                        
+                            <li><a href="/tags/随笔">随笔</a></li>
+                        
+                            <li><a href="/photos">相册</a></li>
+                        
+                            <li><a href="https://home.2019w.cn">个人主页</a></li>
+                        
+                            <li><a href="http://www.show08.com">个人简历</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                            
+                                <a class="fl Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/2017-06-17/" style="font-size: 10px;">2017.06.17</a> <a href="/tags/35条/" style="font-size: 10px;">35条</a> <a href="/tags/Bower/" style="font-size: 10px;">Bower</a> <a href="/tags/ES6/" style="font-size: 10px;">ES6</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitHub/" style="font-size: 15px;">GitHub</a> <a href="/tags/H5/" style="font-size: 10px;">H5</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LiveRe/" style="font-size: 10px;">LiveRe</a> <a href="/tags/Map/" style="font-size: 10px;">Map</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a> <a href="/tags/YAHOO/" style="font-size: 10px;">YAHOO</a> <a href="/tags/ajax/" style="font-size: 15px;">ajax</a> <a href="/tags/cookie/" style="font-size: 15px;">cookie</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/localStorage/" style="font-size: 10px;">localStorage</a> <a href="/tags/session/" style="font-size: 10px;">session</a> <a href="/tags/sessionStorage/" style="font-size: 10px;">sessionStorage</a> <a href="/tags/spfk/" style="font-size: 10px;">spfk</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/三个阶段/" style="font-size: 10px;">三个阶段</a> <a href="/tags/前端优化/" style="font-size: 10px;">前端优化</a> <a href="/tags/前端工程/" style="font-size: 10px;">前端工程</a> <a href="/tags/原生js/" style="font-size: 10px;">原生js</a> <a href="/tags/宽高获取/" style="font-size: 10px;">宽高获取</a> <a href="/tags/抒情散文/" style="font-size: 10px;">抒情散文</a> <a href="/tags/数组/" style="font-size: 10px;">数组</a> <a href="/tags/母亲节/" style="font-size: 10px;">母亲节</a> <a href="/tags/毕业/" style="font-size: 10px;">毕业</a> <a href="/tags/生活/" style="font-size: 10px;">生活</a> <a href="/tags/管理工具/" style="font-size: 10px;">管理工具</a> <a href="/tags/诗词/" style="font-size: 10px;">诗词</a> <a href="/tags/路由/" style="font-size: 10px;">路由</a> <a href="/tags/问题总结/" style="font-size: 10px;">问题总结</a> <a href="/tags/随手记/" style="font-size: 10px;">随手记</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a> <a href="/tags/雨/" style="font-size: 10px;">雨</a>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">我是一个很哇塞的小伙儿！</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">Rieko</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">Rieko</a></h1>
+              <h1  class="header-author js-header-author" style="line-height:15px;margin-bottom:15px; font-size:14px;"> <a href="javascript:;" style="color:;">--路漫漫其修远兮--</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客主页</a></li>
+                
+                    <li><a href="/tags/随笔">随笔</a></li>
+                
+                    <li><a href="/photos">相册</a></li>
+                
+                    <li><a href="https://home.2019w.cn">个人主页</a></li>
+                
+                    <li><a href="http://www.show08.com">个人简历</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/showcc" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/showccc/activities" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com/3941909649" title="weibo">weibo</a>
+                    
+                        <a class="Instagram" target="_blank" href="https://www.instagram.com/wlz_cc" title="Instagram">Instagram</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-cookie and session" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/09/11/cookie and session/" class="article-date">
+      <time datetime="2017-09-10T16:30:12.000Z" itemprop="datePublished">2017-09-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      cookie 和session 的区别详解
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/session/">session</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="二者的定义"><a href="#二者的定义" class="headerlink" title="二者的定义:"></a>二者的定义:</h3><p><img src="https://show8.github.io/blogimage/cookie.jpg" alt="图1"><br><a id="more"></a><br>当你在浏览网站的时候，WEB服务器会先送一小小资料放在你的计算机上，Cookie会帮你在网站上所打的文字或是一些选择，都纪录下来。当下次你再光临同一个网站，WEB 服务器会先看看有没有它上次留下的 Cookie 资料，有的话，就会依据 Cookie里的内容来判断使用者，送出特定的网页内容给你。 Cookie 的使用很普遍，许多有提供个人化服务的网站，都是利用Cookie来辨认使用者，以方便送出使用者量身定做的内容，像是 Web 接口的免费 email 网站，都要用到 Cookie。</p>
+<p>具体来说cookie机制采用的是在客户端保持状态的方案，而session机制采用的是在服务器端保持状态的方案。同时我们也看到，由于采用服务器端保持状态的方案在客户端也需要保存一个标识，所以session机制可能需要借助于cookie机制来达到保存标识的目的，但实际上它还有其他选择。</p>
+<p>cookie机制。正统的cookie分发是通过扩展HTTP协议来实现的，服务器通过在HTTP的响应头中加上一行特殊的指示以提示浏览器按照指示生成相应的cookie。然而纯粹的客户端脚本如JavaScript或者VBScript也可以生成cookie。而cookie的使用是由浏览器按照一定的原则在后台自动发送给服务器的。浏览器检查所有存储的cookie，如果某个cookie所声明的作用范围大于等于将要请求的资源所在的位置，则把该cookie附在请求资源的HTTP请求头上发送给服务器。</p>
+<p>cookie的内容主要包括：名字，值，过期时间，路径和域。路径与域一起构成cookie的作用范围。若不设置过期时间，则表示这个cookie的生命期为浏览器会话期间，关闭浏览器窗口，cookie就消失。这种生命期为浏览器会话期的cookie被称为会话cookie。会话cookie一般不存储在硬盘上而是保存在内存里，当然这种行为并不是规范规定的。若设置了过期时间，浏览器就会把cookie保存到硬盘上，关闭后再次打开浏览器，这些cookie仍然有效直到超过设定的过期时间。存储在硬盘上的cookie可以在不同的浏览器进程间共享，比如两个IE窗口。而对于保存在内存里的cookie，不同的浏览器有不同的处理方式。</p>
+<p>session机制。session机制是一种服务器端的机制，服务器使用一种类似于散列表的结构（也可能就是使用散列表）来保存信息。当程序需要为某个客户端的请求创建一个session时，服务器首先检查这个客户端的请求里是否已包含了一个session标识（称为session id）,如果已包含则说明以前已经为此客户端创建过session，服务器就按照session id把这个session检索出来使用（检索不到，会新建一个），如果客户端请求不包含session id，则为此客户端创建一个session并且生成一个与此session相关联的session id，session id的值应该是一个既不会重复，又不容易被找到规律以仿造的字符串，这个session id将被在本次响应中返回给客户端保存。保存这个session id的方式可以采用cookie，这样在交互过程中浏览器可以自动的按照规则把这个标识发送给服务器。一般这个cookie的名字都是类似于SEEESIONID。但cookie可以被人为的禁止，则必须有其他机制以便在cookie被禁止时仍然能够把session id传递回服务器。</p>
+<p>经常被使用的一种技术叫做URL重写，就是把session id直接附加在URL路径的后面。还有一种技术叫做表单隐藏字段。就是服务器会自动修改表单，添加一个隐藏字段，以便在表单提交时能够把session id传递回服务器。比如： </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">"testform"</span> <span class="attr">action</span>=<span class="string">"/xxx"</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"hidden"</span> <span class="attr">name</span>=<span class="string">"jsessionid"</span> <span class="attr">value</span>=<span class="string">"ByOK3vjFD75aPnrF7C2HmdnV6QZcEbzWoWiBYEnLerjQ99zWpBng!-145788764"</span>&gt;</span> </div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>实际上这种技术可以简单的用对action应用URL重写来代替。<br>cookie 和session 的区别：</p>
+<pre><code>1. cookie数据存放在客户的浏览器上，session数据放在服务器上。
+2. cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗考虑到安全应当使用session。
+3. session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能考虑到减轻服务器性能方面，应当使用COOKIE。
+4. 单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
+5. 所以个人建议：
+   将登陆信息等重要信息存放为SESSION
+   其他信息如果需要保留，可以放在COOKIE中
+</code></pre>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang" title="打赏，支持一下">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()" title="关闭">×</a>
+            <div class="shang_tit">
+              <p>谢谢你请我吃糖果</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/09/11/cookie and session/">cookie 和session 的区别详解</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Rieko 的个人博客">Rieko</a></p>
+        <p><span>发布时间:</span>2017年09月11日 - 00时30分</p>
+        <p><span>最后更新:</span>2017年09月11日 - 00时30分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/11/cookie and session/" title="cookie 和session 的区别详解">https://blog.2019w.cn/2017/09/11/cookie and session/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://blog.2019w.cn/2017/09/11/cookie and session/　　作者: Rieko" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>友情提示:</span> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/09/11/ajax/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          $.ajax()方法详解
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/13/Change the computer update the hexo blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">使用hexo，换了电脑怎么更新博客？</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#二者的定义"><span class="toc-number">1.</span> <span class="toc-text">二者的定义:</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+
+    
+        <div id="lv-container" data-id="city" data-uid="MTAyMC8yODY5MS81MjYy" style="width:90%;margin:5% auto 0 auto;background: #fff;padding: 0 12px;border-radius: 5px;">
+<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/09/11/ajax/" title="上一篇: $.ajax()方法详解">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2017/07/13/Change the computer update the hexo blog/" title="下一篇: 使用hexo，换了电脑怎么更新博客？">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/optimization/">YAHOO 35条前端优化建议</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/ES6-map and set/">ES6入门——Set和Map数据结构</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/06/sessionStorage&localStorage&cookie/">cookie 、sessionStorage 、localStorage之间的区别和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/Front-end engineering/">前端工程</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/04/Route/">Vue 2.0  路由传递参数</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/04/Method set/">原生js获取浏览器窗口及元素宽高常用方法集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/With the notes/">随手记（问题总结）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/H5/">H5项目常见问题汇总及解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/18/JS array/">js数组操作</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/17/JSONP/">JSONP是什么</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/11/17/Bower/">Bower使用指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/23/I and the temple of earth/">我与地坛--史铁生</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/11/ajax/">$.ajax()方法详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/11/cookie and session/">cookie 和session 的区别详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/Change the computer update the hexo blog/">使用hexo，换了电脑怎么更新博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/13/Graduation season/">毕业季</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/11/Hexo-spfk-LiveRe/">Github pages + Hexo 博客 spfk 主题使用LiveRe评论系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Life emotion/">生活</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/28/Mother's Day/">燕诗示刘叟</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2018 Rieko
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >本站总访问量: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 3;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
