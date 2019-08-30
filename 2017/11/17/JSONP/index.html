@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JSONP是什么 | 王立战的博客</title>
+  <title>JSONP是什么 | 闲云青烟的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、JSONP的诞生 首先，因为ajax无法跨域，然后开发者就有所思考 其次，开发者发现，&amp;lt;script&amp;gt;标签的src属性是可以跨域的把跨域服务器写成 调用本地的函数 ，回调数据回来不就好了？ json刚好被js支持（object） 调用跨域服务器上动态生成的js格式文件（不管是什么类型的地址，最终生成的返回值都是一段js代码） 这种获取远程数据的方式看起来非常像ajax，但其实并不">
 <meta name="keywords" content="ajax,json,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSONP是什么">
 <meta property="og:url" content="https://blog.2019w.cn/2017/11/17/JSONP/index.html">
-<meta property="og:site_name" content="王立战的博客">
+<meta property="og:site_name" content="闲云青烟的博客">
 <meta property="og:description" content="一、JSONP的诞生 首先，因为ajax无法跨域，然后开发者就有所思考 其次，开发者发现，&amp;lt;script&amp;gt;标签的src属性是可以跨域的把跨域服务器写成 调用本地的函数 ，回调数据回来不就好了？ json刚好被js支持（object） 调用跨域服务器上动态生成的js格式文件（不管是什么类型的地址，最终生成的返回值都是一段js代码） 这种获取远程数据的方式看起来非常像ajax，但其实并不">
 <meta property="og:image" content="http://ow4d8yam8.bkt.clouddn.com/234141.jpg">
 <meta property="og:updated_time" content="2017-11-16T16:45:16.000Z">
@@ -19,7 +19,7 @@
 <meta name="twitter:description" content="一、JSONP的诞生 首先，因为ajax无法跨域，然后开发者就有所思考 其次，开发者发现，&amp;lt;script&amp;gt;标签的src属性是可以跨域的把跨域服务器写成 调用本地的函数 ，回调数据回来不就好了？ json刚好被js支持（object） 调用跨域服务器上动态生成的js格式文件（不管是什么类型的地址，最终生成的返回值都是一段js代码） 这种获取远程数据的方式看起来非常像ajax，但其实并不">
 <meta name="twitter:image" content="http://ow4d8yam8.bkt.clouddn.com/234141.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="王立战的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="闲云青烟的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/favicon.png">
@@ -259,7 +259,7 @@
 <hr>
 <a id="more"></a>
 <h3 id="二、老板，来一斤栗子。"><a href="#二、老板，来一斤栗子。" class="headerlink" title="二、老板，来一斤栗子。"></a>二、老板，来一斤栗子。</h3><h4 id="【栗子一】"><a href="#【栗子一】" class="headerlink" title="【栗子一】"></a>【栗子一】</h4><p><code>跨域服务器</code><br>文件：<code>remote.js</code><br>代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(<span class="string">'我是远程文件'</span>);</div></pre></td></tr></table></figure></p>
-<p>本地<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"跨域服务器/remote.js"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>本地<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"跨域服务器/remote.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
 <p><code>这边做的就是直接引入一个js，页面将会弹出一个提示窗体，显示 我是远程文件。</code></p>
 <h4 id="【栗子二】"><a href="#【栗子二】" class="headerlink" title="【栗子二】"></a>【栗子二】</h4><p><code>跨域服务器</code><br>文件：<code>remote.js</code><br>代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">localHandler(&#123;<span class="string">"result"</span>:<span class="string">"我是远程js带来的数据"</span>&#125;);</div></pre></td></tr></table></figure></p>
 <p>本地<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt; </div><div class="line">    <span class="keyword">var</span> localHandler = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">        alert(<span class="string">'我是本地函数，可以被跨域的remote.js文件调用，远程js带来的数据是：'</span> + data.result); </div><div class="line">    &#125;; </div><div class="line">&lt;<span class="regexp">/script&gt; </span></div><div class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">" src="</span>跨域服务器/remote.js<span class="string">"&gt;&lt;/script&gt;</span></div></pre></td></tr></table></figure></p>
@@ -484,7 +484,7 @@
     <div class="outer">
         <div id="footer-info">
             <div class="footer-left">
-                &copy; 2018 Rieko
+                &copy; 2019 Rieko
             </div>
         </div>
         
